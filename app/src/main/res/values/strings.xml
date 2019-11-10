@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Malhars Children</string>
+
+    <string-array name="sizeDropdown">
+        <item>8&#8211;9</item>
+        <item>9&#8211;10</item>
+        <item>10&#8211;11</item>
+        <item>11&#8211;12</item>
+        <item>12&#8211;14</item>
+    </string-array>
+</resources>
