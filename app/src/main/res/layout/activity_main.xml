@@ -107,7 +107,7 @@
                         </LinearLayout>
 
                         <EditText
-                            android:id="@+id/$1"
+                            android:id="@+id/p1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Price"
@@ -191,7 +191,7 @@
                         </LinearLayout>
 
                         <EditText
-                            android:id="@+id/$2"
+                            android:id="@+id/p2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Price"
@@ -281,7 +281,7 @@
                         </LinearLayout>
 
                         <EditText
-                            android:id="@+id/$3"
+                            android:id="@+id/p3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Price"
@@ -364,7 +364,7 @@
                         </LinearLayout>
 
                         <EditText
-                            android:id="@+id/$4"
+                            android:id="@+id/p4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Price"

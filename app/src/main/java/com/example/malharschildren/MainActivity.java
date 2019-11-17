@@ -2,7 +2,10 @@ package com.example.malharschildren;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -51,8 +54,17 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityView = findViewById(textId);
         Spinner sizeView = findViewById(sizeId);
 
-        //char - int conversion (Ascii): '0' - 48, '1' - 48 ... '8' - 56, '9' - 57.
-        size = sizeView.getSelectedItem().toString().charAt(0) - '7';
+        String selection = sizeView.getSelectedItem().toString();
+
+        //char - int conversion (Ascii): '0' - 48, '1' - 49 ... '8' - 56, '9' - 57.
+        size = selection.charAt(0);
+
+        if (size == '1') {
+            size = 10 + selection.charAt(1) ;
+        }
+
+        size -= '8';
+        Log.e("", "click: " + size);
 
         quantity = quantities[textNum - 1][size];
 
@@ -67,37 +79,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submit(View view) {
-        String[] names = new String[styles];
-        int[] prices = new int[styles];
-        String[] sizes = new String[styles];
+        String name;
 
         // "\nNAME ✔ \tSIZE ✔ \tQUANTITY ✔ \tPRICE ✔ \tAMOUNT ✔"
         String message = "Thanks so much for buying my clothes!" + "\n" +
                 "\nThis is your invoice:" + "\n" + "\nStyle Name\tSize\tQuantity\tPrice\tAmount\n" + "\n";
 
         for (int i = 0; i < quantities.length; i++) {
-            for (int j = 0; j < sizes.length; j++) {
+            for (int j = 0; j < sizes; j++) {
                 if (quantities[i][j] != 0) {
                     int nameId = resources.getIdentifier("n" + i, "id", thisPackage);
-                    int priceId = resources.getIdentifier("$" + i, "id", thisPackage);
+                    int priceId = resources.getIdentifier("p" + i, "id", thisPackage);
 
                     TextView nameView = findViewById(nameId);
                     EditText priceView = findViewById(priceId);
 
-                    String name = nameView.getText().toString() + "\t";
+                    name = nameView.getText().toString() + "\t";
                     String size = (j + 7) + " - " + round(1 + (j + 7) * 1.045) + "\t";
                     int quantity = quantities[i][j];
                     String quantityString = "₹" + Integer.toString(quantity) + "\t";
                     int price = Integer.parseInt(nameView.getText().toString());
                     String priceString = "₹" + Integer.toString(quantity) + "\t";
-                    String amount = "₹" + quantity * price;
+                    String amount = "₹" + quantity * price + "\n";
 
-                    message += name + size + quantityString + priceString + amount
-                    + "\n"
-                    + "\n"
-                    + "\nThank you so much for all your support and for shopping at Malhar's Children!  ";
+                    message += name + size + quantityString + priceString + amount;
                 }
             }
+        }
+        message += "\n"
+                 + "\nThank you so much for all your support and for shopping at Malhar's Children!";
+        Log.e("", "submit: " + message);
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"rahulmaru3507@gmail.com", "suma.maru@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Malhar's Children Invoice");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
         }
     }
 }
