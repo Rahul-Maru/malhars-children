@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -11,231 +12,149 @@
             android:id="@+id/grid_columns"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="30dp">
 
             <LinearLayout
-                android:id="@+id/grid_rows"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
                     android:layout_weight="1"
-                    >
+                    android:textSize="15sp"
+                    android:text="Name:" />
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/stewpid"
-
-                        />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="8dp"
-                            android:text="Style Name"
-                            android:textColor="@android:color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <Spinner
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="#f0f0f0"
-                            android:entries="@array/sizeDropdown"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="8dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="16dp"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="#00BCD4"
-                                android:text="-" />
-
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="8dp"
-                                android:hint="Qty"
-                                android:text="0"
-                                android:textAlignment="center" />
-
-                            <Button
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="#F44336"
-                                android:text="+" />
-                        </LinearLayout>
-
-                        <EditText
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="Price"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <EditText
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
+                    android:hint="Enter name"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:layout_weight="3"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    >
+                    android:textSize="15sp"
+                    android:text="Email:" />
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/stewpid"
-
-                        />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="8dp"
-                            android:text="Style Name"
-                            android:textColor="@android:color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <Spinner
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="#f0f0f0"
-                            android:entries="@array/sizeDropdown"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="8dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="16dp"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="#00BCD4"
-                                android:text="-" />
-
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="8dp"
-                                android:hint="Qty"
-                                android:text="0"
-                                android:textAlignment="center" />
-
-                            <Button
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="#F44336"
-                                android:text="+" />
-                        </LinearLayout>
-
-                        <EditText
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="Price"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-                </LinearLayout>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:hint="Enter email"/>
             </LinearLayout>
             <LinearLayout
-                android:id="@id/grid_rows"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/customborder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:text="Sleevelss top"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
 
                 <LinearLayout
+                    android:id="@+id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    >
+                    android:layout_height="200dp"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/stewpid"
-
-                        />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="8dp"
-                            android:text="Style Name"
-                            android:textColor="@android:color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <Spinner
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="#f0f0f0"
-                            android:entries="@array/sizeDropdown"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="8dp"/>
-                    </LinearLayout>
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:src="@drawable/stewpid" />
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="Size:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/sizeDropdown"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Flavour:"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Colour/Pattern"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textSize="14sp" />
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="16dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
                             android:orientation="horizontal">
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:background="#00BCD4"
                                 android:text="-" />
 
-                            <EditText
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="8dp"
+                                android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
                                 android:textAlignment="center" />
@@ -243,95 +162,332 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:background="#F44336"
                                 android:text="+" />
                         </LinearLayout>
-
-                        <EditText
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="Price"
-                            android:textSize="14sp"/>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    >
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/stewpid"
-
-                        />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="8dp"
-                            android:text="Style Name"
-                            android:textColor="@android:color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <Spinner
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="#f0f0f0"
-                            android:entries="@array/sizeDropdown"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="8dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
                             android:orientation="horizontal">
 
-                            <Button
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="#00BCD4"
-                                android:text="-" />
-
-                            <EditText
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="8dp"
-                                android:hint="Qty"
-                                android:text="0"
-                                android:textAlignment="center" />
+                                android:text="Price:"
+                                android:textSize="15sp" />
 
-                            <Button
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="#F44336"
-                                android:text="+" />
+                            <EditText
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:hint="960"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textSize="14sp" />
                         </LinearLayout>
-
-                        <EditText
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="Price"
-                            android:textSize="14sp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
             <!-- INSERT NEW ROW BELOW -->
+
+            <LinearLayout
+                android:id="@id/grid_columns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customborder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:text="Circle top"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@id/grid_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:src="@drawable/stewpid" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="Size:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/sizeDropdown"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Flavour:"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Colour/Pattern"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="-" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="8dp"
+                                android:background="@drawable/customborder"
+                                android:hint="Qty"
+                                android:text="0"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="+" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price:"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:hint="840"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/grid_columns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customborder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:text="Style Name"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@id/grid_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:src="@drawable/stewpid" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="Size:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/sizeDropdown"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Flavour:"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Colour/Pattern"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="-" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="8dp"
+                                android:background="@drawable/customborder"
+                                android:hint="Qty"
+                                android:text="0"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="+" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price:"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:hint="960"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="bottom">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit" />
+
+            </RelativeLayout>
+
         </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/submit-button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#96CDEB"
+            android:text="Submit"
+            android:textSize="20sp" />
+
     </RelativeLayout>
-</ScrollView>
+
+</RelativeLayout>
