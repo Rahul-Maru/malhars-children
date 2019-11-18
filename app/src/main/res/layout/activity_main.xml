@@ -311,7 +311,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="m0"
+                                android:tag="m1"
                                 android:text="-" />
 
                             <TextView
@@ -329,7 +329,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="p0"
+                                android:tag="p1"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -458,7 +458,7 @@
                                 android:layout_height="40dp"
                                 android:text="-"
                                 android:onClick="click"
-                                android:tag="m0"/>
+                                android:tag="m2"/>
 
                             <TextView
                                 android:id="@+id/q2"
@@ -476,7 +476,7 @@
                                 android:layout_height="40dp"
                                 android:text="+"
                                 android:onClick="click"
-                                android:tag="p0"/>
+                                android:tag="p2"/>
                         </LinearLayout>
 
                         <LinearLayout
