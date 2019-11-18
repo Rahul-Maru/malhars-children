@@ -18,7 +18,7 @@ import static java.lang.Math.round;
 public class MainActivity extends AppCompatActivity {
     Resources resources;
     String thisPackage;
-    int styles = 1;
+    int styles = 3;
     int sizes = 5;
     int[][] quantities = new int[styles][sizes];
 
@@ -89,9 +89,6 @@ public class MainActivity extends AppCompatActivity {
             if (quantity > 0) {
                 quantity--;
             }
-            else {
-
-            }
         } else {
             quantity++;
         }
@@ -102,43 +99,53 @@ public class MainActivity extends AppCompatActivity {
 
     public void submit(View view) {
         String name;
+        int total = 0;
+
+        EditText nameField = findViewByString("m0");
+        EditText emailField = findViewByString("e0");
+
+        String username = nameField.getText().toString();
+        String email = emailField.getText().toString();
 
         // "\nNAME ✔ \tSIZE ✔ \tQUANTITY ✔ \tPRICE ✔ \tAMOUNT ✔"
-        String message = "Thanks so much for buying my clothes!" + "\n" +
+        String message = "Dear " + username + "," +
+                "\nThanks so much for buying my clothes!" + "\n" +
                 "\nThis is your invoice:" + "\n" + "\nStyle Name\tFlavour\tSize\tQuantity\tPrice\tAmount\n" + "\n";
 
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
                 if (quantities[i][j] != 0) {
-
                     TextView nameView = findViewByString("n" + i);
                     EditText priceView = findViewByString("p" + i);
-                    EditText flavorView = findViewByString("f" + i);
+                    Spinner flavorView = findViewByString("f" + i);
                     TextView quantityView = findViewByString("q" + i);
 
-                    name = nameView.getText().toString() + "\t";
-                    String flavor = flavorView.getText() + "\t";
-                    String size = (j + 7) + " - " + round(1 + (j + 7) * 1.045) + "\t";
+                    name = nameView.getText().toString() + "\n";
+                    String flavor = flavorView.getSelectedItem() + "\n";
+                    String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045) + "\n";
                     int quantity = quantities[i][j];
-                    String quantityString = quantity + "\t";
+                    String quantityString = quantity + "\n";
                     int price = Integer.parseInt(priceView.getText().toString());
-                    String priceString = "₹" + Integer.toString(price) + "\t";
-                    String amount = "₹" + quantity * price + "\n";
+                    String priceString = "₹" + price + "\n";
+                    int amount = quantity * price;
+                    total += amount;
+                    String amountString = "₹" + amount + "\n\n";
 
                     message += name + flavor + size + quantityString + priceString + amount;
-
 
                 }
             }
         }
-        message += "\n"
-                + "\nThank you so much for all your support and for shopping at Malhar's Children!";
+        message += "\n Total:\t" + total +
+                "\n"
+                + "\nThank you so much for all your support and for shopping at Malhar's Children!\n\n Raina de Nazareth";
         Log.e("", "submit: " + message);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_TEXT, message);
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"rahulmaru3507@gmail.com", "suma.maru@gmail.com"});
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+        intent.putExtra(Intent.EXTRA_CC, new String[]{"raina.malharschildren@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Malhar's Children Invoice");
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -153,10 +160,9 @@ public class MainActivity extends AppCompatActivity {
     public void reset() {
         for(int i = 0; i < quantities.length; i++) {
             TextView quantityView = findViewByString("q" + i);
-            EditText flavorView = findViewByString("f" + i);
             quantities[i] = new int[sizes];
             quantityView.setText("0");
-            flavorView.setText("Default");
+
         }
     }
 
@@ -167,4 +173,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-

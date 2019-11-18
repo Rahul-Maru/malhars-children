@@ -32,10 +32,36 @@
                     android:textSize="20sp" />
 
                 <EditText
+                    android:id="@+id/m0"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:hint="Enter name"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1"
+                    android:text="Email:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/e0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:hint="Enter email"
                     android:imeOptions="actionDone"
                     android:singleLine="true"
                     android:textAlignment="center" />
@@ -53,15 +79,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="8dp"
                     android:layout_weight="1"
-                    android:text="Email:"
+                    android:text="Phone:"
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/e1"
+                    android:id="@+id/c0"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:hint="Enter email"
+                    android:hint="Enter phone number"
                     android:imeOptions="actionDone"
                     android:singleLine="true"
                     android:textAlignment="center" />
@@ -310,7 +336,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="m0"
+                                android:tag="m1"
                                 android:text="-" />
 
                             <TextView
@@ -328,7 +354,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="p0"
+                                android:tag="p1"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -457,7 +483,7 @@
                                 android:layout_height="40dp"
                                 android:text="-"
                                 android:onClick="click"
-                                android:tag="m0"/>
+                                android:tag="m2"/>
 
                             <TextView
                                 android:id="@+id/q2"
@@ -475,7 +501,7 @@
                                 android:layout_height="40dp"
                                 android:text="+"
                                 android:onClick="click"
-                                android:tag="p0"/>
+                                android:tag="p2"/>
                         </LinearLayout>
 
                         <LinearLayout
