@@ -9,15 +9,17 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/grid_columns"
+            android:id="@id/grid_rows"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
             android:layout_marginTop="30dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
@@ -50,6 +52,7 @@
                     android:textSize="15sp" />
 
                 <EditText
+                    android:id="@+id/e1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -67,12 +70,13 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/n0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="8dp"
                     android:text="Vest"
-                    android:textColor="@android:color/black"
+                    android:textColor="#555555"
                     android:textSize="20sp" />
 
                 <LinearLayout
@@ -86,12 +90,13 @@
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="8dp"
                         android:layout_weight="4"
-                        android:src="@drawable/stewpid" />
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/airie"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="8dp"
                         android:layout_weight="6"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -111,6 +116,7 @@
                                 android:textSize="15sp" />
 
                             <Spinner
+                                android:id="@+id/z0"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -132,13 +138,15 @@
                                 android:textSize="15sp" />
 
                             <EditText
+                                android:id="@+id/f0"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Colour/Pattern"
+                                android:hint="Colour / Pattern"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:text="Vanilla"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -151,9 +159,12 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-" />
+                                android:text="-"
+                                android:onClick="click"
+                                android:tag="m0"/>
 
                             <TextView
+                                android:id="@+id/q0"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="8dp"
@@ -165,7 +176,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+" />
+                                android:text="+"
+                                android:onClick="click"
+                                android:tag="p0"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -182,13 +195,14 @@
                                 android:textSize="15sp" />
 
                             <EditText
+                                android:id="@+id/p0"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
-                                android:hint="960"
+                                android:text="960"
+                                android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:textAlignment="center"
-                                android:text="960"
                                 android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -205,7 +219,6 @@
         android:layout_alignParentBottom="true">
 
         <Button
-            android:id="@+id/submit-button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -213,7 +226,8 @@
             android:textColor="#ffffff"
             android:background="#96CDEB"
             android:text="Submit"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:onClick="submit"/>
 
     </RelativeLayout>
 
