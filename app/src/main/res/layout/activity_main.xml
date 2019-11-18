@@ -6,19 +6,21 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        >
 
         <LinearLayout
             android:id="@id/grid_rows"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="30dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -27,7 +29,7 @@
                     android:layout_weight="1"
                     android:layout_marginHorizontal="8dp"
                     android:text="Name:"
-                    android:textSize="15sp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:layout_width="0dp"
@@ -41,7 +43,10 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="30dp"
+                >
 
                 <TextView
                     android:layout_width="0dp"
@@ -49,7 +54,7 @@
                     android:layout_marginHorizontal="8dp"
                     android:layout_weight="1"
                     android:text="Email:"
-                    android:textSize="15sp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/e1"
@@ -65,7 +70,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:background="@drawable/customborder"
                 android:orientation="vertical">
 
@@ -74,25 +78,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
-                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginHorizontal="24dp"
                     android:text="Vest"
                     android:textColor="#555555"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <LinearLayout
                     android:id="@+id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="180dp"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/airie"/>
+                        android:src="@drawable/vest_flamingo"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -134,19 +140,16 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Flavour:"
+                                android:text="Variant:"
                                 android:textSize="15sp" />
 
-                            <EditText
+                            <Spinner
                                 android:id="@+id/f0"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Colour / Pattern"
-                                android:imeOptions="actionDone"
-                                android:singleLine="true"
-                                android:textAlignment="center"
-                                android:textSize="14sp"
-                                android:text="Vanilla"/>
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/vestFlavourSpinner"
+                                android:textAlignment="center" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -171,6 +174,7 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
+                                android:textSize="18sp"
                                 android:textAlignment="center" />
 
                             <Button
@@ -208,7 +212,298 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customborder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/n1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:text="Wrap Dress"
+                    android:textColor="#555555"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@id/grid_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginBottom="32dp"
+                        android:layout_weight="4"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/wrap_dress_green"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="Size:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:id="@+id/z1"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/sizeDropdown"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Variant:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:id="@+id/f1"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/wrapDressFlavourSpinner"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="-"
+                                android:onClick="click"
+                                android:tag="m0"/>
+
+                            <TextView
+                                android:id="@+id/q1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="8dp"
+                                android:background="@drawable/customborder"
+                                android:hint="Qty"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="+"
+                                android:onClick="click"
+                                android:tag="p0"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price:"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/p1"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:text="960"
+                                android:hint="Price"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
             <!-- INSERT NEW ROW BELOW -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customborder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/n2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:text="Kurta"
+                    android:textColor="#555555"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@id/grid_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginBottom="32dp"
+                        android:layout_weight="4"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/kurta_cloud"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="Size:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:id="@+id/z2"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/sizeDropdown"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Variant:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:id="@+id/f2"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/kurtaFlavourSpinner"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="-"
+                                android:onClick="click"
+                                android:tag="m0"/>
+
+                            <TextView
+                                android:id="@+id/q2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="8dp"
+                                android:background="@drawable/customborder"
+                                android:hint="Qty"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:textAlignment="center" />
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:text="+"
+                                android:onClick="click"
+                                android:tag="p0"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price:"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/p2"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:text="960"
+                                android:hint="Price"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
