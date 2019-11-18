@@ -97,10 +97,12 @@ public class MainActivity extends AppCompatActivity {
                     int nameId = resources.getIdentifier("n" + i, "id", thisPackage);
                     int priceId = resources.getIdentifier("p" + i, "id", thisPackage);
                     int flavorId = resources.getIdentifier("f" + i, "id", thisPackage);
+                    int quantityId = resources.getIdentifier("q" + i, "id", thisPackage);
 
                     TextView nameView = findViewById(nameId);
                     EditText priceView = findViewById(priceId);
                     EditText flavorView = findViewById(flavorId);
+                    TextView quantityView = findViewById(quantityId);
 
                     name = nameView.getText().toString() + "\t";
                     String flavor = flavorView.getText() + "\t";
@@ -112,7 +114,11 @@ public class MainActivity extends AppCompatActivity {
                     String amount = "₹" + quantity * price + "\n";
 
                     message += name + flavor + size + quantityString + priceString + amount;
+
                     quantities[i][j] = 0;
+                    quantityView.setText("0");
+                    flavorView.setText("Vanilla");
+ 
                 }
             }
         }
