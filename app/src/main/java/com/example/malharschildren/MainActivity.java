@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
 import static java.lang.Math.round;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     String thisPackage;
     int styles = 3;
     int sizes = 5;
+    int bill = 4;
     int[][] quantities = new int[styles][sizes];
 
 
@@ -37,9 +37,11 @@ public class MainActivity extends AppCompatActivity {
             }
             // Spinner sizeView = findViewByString("z" + i);
         }
+
     }
 
-   public void spinnerClick(View view) {
+
+    public void spinnerClick(View view) {
         Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");
         Spinner sizeView = (Spinner) view;
         String selection = sizeView.getSelectedItem().toString();
@@ -62,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void click(View view) {
         //gets tag (ex. b5) of view that calls this method
-        char[] tag = view.getTag().toString().toCharArray();
+        String tag = view.getTag().toString();
         //gets second char in tag (ex. 5), textNum and the first in tag (ex. b), clickType
-        int textNum = tag[1] - '0';
+        int textNum = tag.charAt(0) - '0';
         int size;
-        char clickType = tag[0];
+        char clickType = tag.charAt(1);
         int quantity;
 
         TextView quantityView = findViewByString("q" + textNum);
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         if (clickType == 'm') {
             if (quantity > 0) {
                 quantity--;
+
             }
         } else {
             quantity++;
@@ -115,10 +118,11 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
                 if (quantities[i][j] != 0) {
-                    TextView nameView = findViewByString("n" + i);
-                    EditText priceView = findViewByString("p" + i);
-                    Spinner flavorView = findViewByString("f" + i);
-                    TextView quantityView = findViewByString("q" + i);
+                    String hex = Integer.toHexString(i);
+                    TextView nameView = findViewByString("n" + hex);
+                    EditText priceView = findViewByString("p" + hex);
+                    Spinner flavorView = findViewByString("f" + hex);
+                    TextView quantityView = findViewByString("q" + hex);
 
                     name = nameView.getText().toString() + "\n";
                     String flavor = flavorView.getSelectedItem() + "\n";
@@ -132,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                     String amountString = "₹" + amount + "\n\n";
 
                     message += name + flavor + size + quantityString + priceString + amount;
-
+                    bill += 1;
                 }
             }
         }
@@ -145,7 +149,8 @@ public class MainActivity extends AppCompatActivity {
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
-        intent.putExtra(Intent.EXTRA_CC, new String[]{"raina.malharschildren@gmail.com"});
+        // raina.malharschildren@gmail.com
+        intent.putExtra(Intent.EXTRA_CC, new String[]{"rahulmar3507@gmail.com", "suma.maru@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Malhar's Children Invoice");
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -158,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void reset() {
-        for(int i = 0; i < quantities.length; i++) {
+        for (int i = 0; i < quantities.length; i++) {
             TextView quantityView = findViewByString("q" + i);
             quantities[i] = new int[sizes];
             quantityView.setText("0");
@@ -170,6 +175,6 @@ public class MainActivity extends AppCompatActivity {
         int id = resources.getIdentifier(name, "id", thisPackage);
         return (T) findViewById(id);
     }
-
+    
 
 }
