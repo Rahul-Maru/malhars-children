@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Malhars Children</string>
+    <string name="app_name">Malhar\'s Children</string>
 
     <string-array name="sizeDropdown">
         <item>8&#8211;9</item>
@@ -8,4 +8,59 @@
         <item>11&#8211;12</item>
         <item>12&#8211;14</item>
     </string-array>
+
+    <string-array name="noFlavourSpinner">
+        <item>Not available</item>
+    </string-array>
+
+    <string-array name="vestFlavourSpinner">
+        <item>Flamingo</item>
+        <item>White</item>
+        <item>Heart</item>
+    </string-array>
+
+    <string-array name="ollyFlavourSpinner">
+        <item>Stripe</item>
+        <item>Octopus</item>
+    </string-array>
+
+    <string-array name="shirtFlavourSpinner">
+        <item>Ziggy</item>
+        <item>Almond</item>
+        <item>Crab</item>
+    </string-array>
+
+    <string-array name="kurtaFlavourSpinner">
+        <item>Cloud</item>
+        <item>Peach</item>
+        <item>Fox</item>
+        <item>BLU</item>
+    </string-array>
+
+    <string-array name="tunicFlavourSpinner">
+        <item>Yellow</item>
+        <item>Green</item>
+    </string-array>
+
+    <string-array name="shiftFlavourSpinner">
+        <item>Pomo</item>
+        <item>Indigo</item>
+        <item>Stripes</item>
+    </string-array>
+
+    <string-array name="wrapDressFlavourSpinner">
+        <item>Green</item>
+        <item>Blue</item>
+    </string-array>
+
+    <string-array name="palazzoFlavourSpinner">
+        <item>Indigo</item>
+        <item>Green</item>
+    </string-array>
+
+    <string-array name="everybodyPantsFlavourSpinner">
+        <item>Indigo</item>
+        <item>Pomo</item>
+    </string-array>
+
 </resources>
