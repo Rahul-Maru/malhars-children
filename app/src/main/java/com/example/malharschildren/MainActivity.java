@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void submit(View view) {
         String name;
+        int total = 0;
 
         EditText nameField = findViewByString("m0");
         EditText emailField = findViewByString("e0");
@@ -119,22 +120,24 @@ public class MainActivity extends AppCompatActivity {
                     Spinner flavorView = findViewByString("f" + i);
                     TextView quantityView = findViewByString("q" + i);
 
-                    name = nameView.getText().toString() + "\t";
-                    String flavor = flavorView.getSelectedItem() + "\t";
-                    String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045) + "\t";
+                    name = nameView.getText().toString() + "\n";
+                    String flavor = flavorView.getSelectedItem() + "\n";
+                    String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045) + "\n";
                     int quantity = quantities[i][j];
-                    String quantityString = quantity + "\t";
+                    String quantityString = quantity + "\n";
                     int price = Integer.parseInt(priceView.getText().toString());
-                    String priceString = "₹" + price + "\t";
-                    String amount = "₹" + quantity * price + "\n";
+                    String priceString = "₹" + price + "\n";
+                    int amount = quantity * price;
+                    total += amount;
+                    String amountString = "₹" + amount + "\n\n";
 
                     message += name + flavor + size + quantityString + priceString + amount;
-
 
                 }
             }
         }
-        message += "\n"
+        message += "\n Total:\t" + total +
+                "\n"
                 + "\nThank you so much for all your support and for shopping at Malhar's Children!\n\n Raina de Nazareth";
         Log.e("", "submit: " + message);
 
@@ -170,4 +173,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-
