@@ -18,7 +18,7 @@ import static java.lang.Math.round;
 public class MainActivity extends AppCompatActivity {
     Resources resources;
     String thisPackage;
-    int styles = 1;
+    int styles = 3;
     int sizes = 5;
     int[][] quantities = new int[styles][sizes];
 
