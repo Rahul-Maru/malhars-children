@@ -103,42 +103,46 @@ public class MainActivity extends AppCompatActivity {
 
         EditText nameField = findViewByString("m0");
         EditText emailField = findViewByString("e0");
+        EditText phoneField = findViewByString("c0");
 
         String username = nameField.getText().toString();
         String email = emailField.getText().toString();
+        String phone = phoneField.getText().toString();
 
         // "\nNAME ✔ \tSIZE ✔ \tQUANTITY ✔ \tPRICE ✔ \tAMOUNT ✔"
         String message = "Dear " + username + "," +
-                "\nThanks so much for buying my clothes!" + "\n" +
-                "\nThis is your invoice:" + "\n" + "\nStyle Name\tFlavour\tSize\tQuantity\tPrice\tAmount\n" + "\n";
-
+                "\n\nThank you so much for shopping at Malhar's Children!" +
+                "\n\nThis is your invoice:" + "\n\n" +
+                "Name: " + username + "\n" +
+                "Phone: " + phone + "\n\n";
+        int unit = 0;
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
                 if (quantities[i][j] != 0) {
+                    unit += 1;
                     TextView nameView = findViewByString("n" + i);
                     EditText priceView = findViewByString("p" + i);
                     Spinner flavorView = findViewByString("f" + i);
                     TextView quantityView = findViewByString("q" + i);
 
-                    name = nameView.getText().toString() + "\n";
-                    String flavor = flavorView.getSelectedItem() + "\n";
-                    String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045) + "\n";
+                    name = nameView.getText().toString();
+                    String flavor = flavorView.getSelectedItem().toString();
+                    String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045);
                     int quantity = quantities[i][j];
-                    String quantityString = quantity + "\n";
                     int price = Integer.parseInt(priceView.getText().toString());
-                    String priceString = "₹" + price + "\n";
                     int amount = quantity * price;
                     total += amount;
-                    String amountString = "₹" + amount + "\n\n";
 
-                    message += name + flavor + size + quantityString + priceString + amount;
-
+                    message += "    " + unit + ". " + flavor + " " + name + " X " + quantity +"\n"
+                            + "    Size: " + size + "\n"
+                            + "    Price: ₹" + price + "\n"
+                            + "    Amount: ₹" + amount + "\n\n";
                 }
             }
         }
-        message += "\n Total:\t" + total +
-                "\n"
-                + "\nThank you so much for all your support and for shopping at Malhar's Children!\n\n Raina de Nazareth";
+        message += "Grand Total: ₹" + total + "\n\n\n" +
+        "Warmly,\n";
+
         Log.e("", "submit: " + message);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
