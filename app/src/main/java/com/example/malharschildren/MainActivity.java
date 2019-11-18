@@ -23,7 +23,7 @@ import static java.lang.Math.round;
 public class MainActivity extends AppCompatActivity {
     Resources resources;
     String thisPackage;
-    int styles = 20;
+    int styles = 1;
     int sizes = 5;
     int[][] quantities = new int[styles][sizes];
 
@@ -31,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        for (int i = 0; i < quantities.length; i++) {
+            for (int j = 0; j < sizes; j++) {
+                quantities[i][j] = 0;
+            }
+        }
     }
 
 
@@ -60,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
         size = selection.charAt(0);
 
         if (size == '1') {
-            size = 10 + selection.charAt(1) ;
+            size = 10 + selection.charAt(1);
         }
 
         size -= '8';
         Log.e("", "click: " + size);
 
-        quantity = quantities[textNum - 1][size];
+        quantity = quantities[textNum ][size];
 
         if (clickType == 'm') {
             quantity--;
@@ -74,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             quantity++;
         }
         quantityView.setText("" + (quantity));
-        quantities[textNum - 1][size] = quantity;
+        quantities[textNum][size] = quantity;
 
     }
 
@@ -83,31 +89,35 @@ public class MainActivity extends AppCompatActivity {
 
         // "\nNAME ✔ \tSIZE ✔ \tQUANTITY ✔ \tPRICE ✔ \tAMOUNT ✔"
         String message = "Thanks so much for buying my clothes!" + "\n" +
-                "\nThis is your invoice:" + "\n" + "\nStyle Name\tSize\tQuantity\tPrice\tAmount\n" + "\n";
+                "\nThis is your invoice:" + "\n" + "\nStyle Name\tFlavour\tSize\tQuantity\tPrice\tAmount\n" + "\n";
 
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
                 if (quantities[i][j] != 0) {
                     int nameId = resources.getIdentifier("n" + i, "id", thisPackage);
                     int priceId = resources.getIdentifier("p" + i, "id", thisPackage);
+                    int flavorId = resources.getIdentifier("f" + i, "id", thisPackage);
 
                     TextView nameView = findViewById(nameId);
                     EditText priceView = findViewById(priceId);
+                    EditText flavorView = findViewById(flavorId);
 
                     name = nameView.getText().toString() + "\t";
+                    String flavor = flavorView.getText() + "\t";
                     String size = (j + 7) + " - " + round(1 + (j + 7) * 1.045) + "\t";
                     int quantity = quantities[i][j];
-                    String quantityString = "₹" + Integer.toString(quantity) + "\t";
-                    int price = Integer.parseInt(nameView.getText().toString());
-                    String priceString = "₹" + Integer.toString(quantity) + "\t";
+                    String quantityString = quantity + "\t";
+                    int price = Integer.parseInt(priceView.getText().toString());
+                    String priceString = "₹" + Integer.toString(price) + "\t";
                     String amount = "₹" + quantity * price + "\n";
 
-                    message += name + size + quantityString + priceString + amount;
+                    message += name + flavor + size + quantityString + priceString + amount;
+                    quantities[i][j] = 0;
                 }
             }
         }
         message += "\n"
-                 + "\nThank you so much for all your support and for shopping at Malhar's Children!";
+                + "\nThank you so much for all your support and for shopping at Malhar's Children!";
         Log.e("", "submit: " + message);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
