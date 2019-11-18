@@ -188,6 +188,7 @@
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:textAlignment="center"
+                                android:text="960"
                                 android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
