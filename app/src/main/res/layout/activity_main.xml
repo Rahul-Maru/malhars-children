@@ -24,8 +24,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1"
                     android:text="Name:"
                     android:textSize="15sp" />
 
@@ -73,8 +73,8 @@
                     android:id="@+id/n0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="8dp"
                     android:text="Sleeveless top"
                     android:textColor="@android:color/black"
                     android:textSize="20sp" />
@@ -120,6 +120,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/sizeDropdown"
+                                android:tag="z0"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -143,9 +144,9 @@
                                 android:hint="Colour / Pattern"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="Default"
                                 android:textAlignment="center"
-                                android:textSize="14sp"
-                                android:text="Vanilla"/>
+                                android:textSize="14sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -158,9 +159,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m0"/>
+                                android:tag="m0"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q0"
@@ -175,9 +176,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p0"/>
+                                android:tag="p0"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -197,10 +198,10 @@
                                 android:id="@+id/p0"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="960"
                                 android:textAlignment="center"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -217,16 +218,36 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:textColor="#ffffff"
-            android:background="#96CDEB"
-            android:text="Submit"
-            android:textSize="20sp"
-            android:onClick="submit"/>
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#96CDEB"
+                android:onClick="resetClick"
+                android:text="Reset"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="#5A64AA"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#96CDEB"
+                android:onClick="submit"
+                android:text="Submit"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
 
     </RelativeLayout>
 
