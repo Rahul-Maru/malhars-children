@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Malhars Children</string>
+    <string name="app_name">Malhar\'s Children</string>
 
     <string-array name="sizeDropdown">
         <item>8&#8211;9</item>
@@ -8,4 +8,20 @@
         <item>11&#8211;12</item>
         <item>12&#8211;14</item>
     </string-array>
+
+    <string-array name="noFlavourSpinner">
+        <item>Not available</item>
+    </string-array>
+
+    <string-array name="vestFlavourSpinner">
+        <item>Flamingo</item>
+        <item>White</item>
+        <item>Heart</item>
+    </string-array>
+
+    <string-array name="ollyFlavourSpinner">
+        <item>Stripe</item>
+        <item>Octopus</item>
+    </string-array>
+
 </resources>
