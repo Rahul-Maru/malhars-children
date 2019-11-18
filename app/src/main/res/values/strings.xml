@@ -48,7 +48,7 @@
         <item>Stripes</item>
     </string-array>
 
-    <string-array name="wrapDressFlavourSpinner">
+    <string-array name="callaFlavourSpinner">
         <item>Green</item>
         <item>Blue</item>
     </string-array>

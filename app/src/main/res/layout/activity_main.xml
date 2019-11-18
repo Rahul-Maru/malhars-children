@@ -321,7 +321,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
-                                android:entries="@array/wrapDressFlavourSpinner"
+                                android:entries="@array/callaFlavourSpinner"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
