@@ -19,8 +19,9 @@ public class MainActivity extends AppCompatActivity {
     String thisPackage;
     int styles = 3;
     int sizes = 5;
+    int maxFlavors = 4;
     int bill = 4;
-    int[][] quantities = new int[styles][sizes];
+    int[][][] quantities = new int[styles][sizes][maxFlavors];
 
 
     @Override
@@ -31,17 +32,17 @@ public class MainActivity extends AppCompatActivity {
         resources = getResources();
         thisPackage = MainActivity.this.getPackageName();
 
-        for (int i = 0; i < quantities.length; i++) {
+        /*for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
-                quantities[i][j] = 0;
+                quantities[i][j] = new int[maxFlavours];
             }
             // Spinner sizeView = findViewByString("z" + i);
-        }
+        }*/
 
     }
 
 
-    public void spinnerClick(View view) {
+    /*public void spinnerClick(View view) {
         Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");
         Spinner sizeView = (Spinner) view;
         String selection = sizeView.getSelectedItem().toString();
@@ -60,32 +61,35 @@ public class MainActivity extends AppCompatActivity {
         size -= '8';
 
         quantityView.setText(quantities[tagNum][size]);
-    }
+    }*/
 
     public void click(View view) {
         //gets tag (ex. b5) of view that calls this method
         String tag = view.getTag().toString();
         //gets second char in tag (ex. 5), textNum and the first in tag (ex. b), clickType
-        int textNum = tag.charAt(0) - '0';
+        int textNum = tag.charAt(1) - '0';
         int size;
-        char clickType = tag.charAt(1);
+        char clickType = tag.charAt(0);
         int quantity;
 
         TextView quantityView = findViewByString("q" + textNum);
         Spinner sizeView = findViewByString("z" + textNum);
+        Spinner flavorView = findViewByString("f" + textNum);
 
-        String selection = sizeView.getSelectedItem().toString();
+        String sizeSelection = sizeView.getSelectedItem().toString();
+        int flavorSelection = flavorView.getSelectedItemPosition();
+
 
         //char - int conversion (Ascii): '0' - 48, '1' - 49 ... '8' - 56, '9' - 57.
-        size = selection.charAt(0);
+        size = sizeSelection.charAt(0);
 
         if (size == '1') {
-            size = 10 + selection.charAt(1);
+            size = 10 + sizeSelection.charAt(1);
         }
 
         size -= '8';
 
-        quantity = quantities[textNum][size];
+        quantity = quantities[textNum][size][flavorSelection];
 
         if (clickType == 'm') {
             if (quantity > 0) {
@@ -96,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             quantity++;
         }
         quantityView.setText("" + (quantity));
-        quantities[textNum][size] = quantity;
+        quantities[textNum][size][flavorSelection] = quantity;
 
     }
 
@@ -121,25 +125,27 @@ public class MainActivity extends AppCompatActivity {
         int unit = 0;
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
-                if (quantities[i][j] != 0) {
-                    unit += 1;
-                    TextView nameView = findViewByString("n" + i);
-                    EditText priceView = findViewByString("p" + i);
-                    Spinner flavorView = findViewByString("f" + i);
-                    TextView quantityView = findViewByString("q" + i);
+                for (int k = 0; k < maxFlavors; k++) {
+                    if (quantities[i][j][k] != 0) {
+                        unit += 1;
+                        TextView nameView = findViewByString("n" + i);
+                        EditText priceView = findViewByString("p" + i);
+                        Spinner flavorView = findViewByString("f" + i);
+                        TextView quantityView = findViewByString("q" + i);
 
-                    name = nameView.getText().toString();
-                    String flavor = flavorView.getSelectedItem().toString();
-                    String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045);
-                    int quantity = quantities[i][j];
-                    int price = Integer.parseInt(priceView.getText().toString());
-                    int amount = quantity * price;
-                    total += amount;
+                        name = nameView.getText().toString();
+                        String flavor = flavorView.getItemAtPosition(k).toString();
+                        String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045);
+                        int quantity = quantities[i][j][k];
+                        int price = Integer.parseInt(priceView.getText().toString());
+                        int amount = quantity * price;
+                        total += amount;
 
-                    message += "    " + unit + ". " + flavor + " " + name + " X " + quantity +"\n"
-                            + "    Size: " + size + "\n"
-                            + "    Price: ₹" + price + "\n"
-                            + "    Amount: ₹" + amount + "\n\n";
+                        message += "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
+                                + "    Size: " + size + "\n"
+                                + "    Price: ₹" + price + "\n"
+                                + "    Amount: ₹" + amount + "\n\n";
+                    }
                 }
             }
         }
@@ -167,10 +173,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void reset() {
         for (int i = 0; i < quantities.length; i++) {
-            TextView quantityView = findViewByString("q" + i);
-            quantities[i] = new int[sizes];
-            quantityView.setText("0");
-
+            for (int j = 0; j < sizes; j ++) {
+                TextView quantityView = findViewByString("q" + i);
+                quantities[i][j] = new int[maxFlavors];
+                quantityView.setText("0");
+            }
         }
     }
 
@@ -178,6 +185,8 @@ public class MainActivity extends AppCompatActivity {
         int id = resources.getIdentifier(name, "id", thisPackage);
         return (T) findViewById(id);
     }
+
+
     
 
 }
