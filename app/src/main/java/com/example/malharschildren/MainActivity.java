@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
    public void spinnerClick(View view) {
         Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");
         Spinner sizeView = (Spinner) view;
+
         String selection = sizeView.getSelectedItem().toString();
         String tag = sizeView.getTag().toString();
         int tagNum = tag.charAt(1) - '0';
@@ -155,6 +157,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         reset();
+        nameField.setText("");
+        emailField.setText("");
+        phoneField.setText("");
     }
 
     public void resetClick(View view) {
