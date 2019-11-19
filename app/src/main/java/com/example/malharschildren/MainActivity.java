@@ -3,6 +3,7 @@ package com.example.malharschildren;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import static java.lang.Math.round;
 
+
 public class MainActivity extends AppCompatActivity {
     Resources resources;
     String thisPackage;
@@ -24,16 +26,27 @@ public class MainActivity extends AppCompatActivity {
     int sizes = 5;
     int maxFlavors = 4;
     int bill = 4;
+    int currentBill;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
     int[][][] temp = new int[styles][sizes][maxFlavors];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Save bill number even when app is closed
+
+        SharedPreferences prefs = getSharedPreferences("PreferencesName", MODE_PRIVATE);
+        int myInt = prefs.getInt("myInt", 0); // 0 is default
+
+        SharedPreferences.Editor editor = getSharedPreferences("PreferencesName", MODE_PRIVATE).edit();
+        editor.putInt("billNumber", 4);
+        editor.apply();
+
         resources = getResources();
-        thisPackage = MainActivity.this.getPackageName();
+         thisPackage = MainActivity.this.getPackageName();
 
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
@@ -44,7 +57,14 @@ public class MainActivity extends AppCompatActivity {
             }
             String hex = Integer.toHexString(i);
             Spinner sizeView = findViewByString("z" + hex);
-          
+
+            //Method to adjust text size of spinner
+            /*ArrayAdapter<CharSequence> sizeAdapter = ArrayAdapter.createFromResource(
+                   this, R.array.sizeDropdown, R.layout.spinner_layout);
+            sizeAdapter.setDropDownViewResource(R.layout.spinner_layout);
+            sizeView.setAdapter(sizeAdapter);
+            */
+
             Spinner flavorView = findViewByString("f" + hex);
             sizeView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -158,6 +178,7 @@ public class MainActivity extends AppCompatActivity {
                 "Name: " + username + "\n" +
                 "Phone: " + phone + "\n\n";
         int unit = 0;
+
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
                 for (int k = 0; k < maxFlavors; k++) {
@@ -172,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
                         name = nameView.getText().toString();
                         String flavor = flavorView.getItemAtPosition(k).toString();
-                        flavor = (flavor.equalsIgnoreCase("not available") ? "" : "(" + flavor + ")");
+                        flavor = (flavor.equalsIgnoreCase("none") ? "" : flavor);
                         String size = sizeView.getItemAtPosition(j).toString();
                         int quantity = quantities[i][j][k];
                         int price = Integer.parseInt(priceView.getText().toString());

@@ -3,7 +3,6 @@
 
     <string-array name="sizeDropdown">
         <item>8 - 9</item>
-        <item>8 - 9</item>
         <item>9 - 10</item>
         <item>10 - 11</item>
         <item>11 - 12</item>
@@ -22,7 +21,7 @@
     </string-array>
 
     <string-array name="noFlavourSpinner">
-        <item>Not available</item>
+        <item>None</item>
     </string-array>
 
     <string-array name="vestFlavourSpinner">
