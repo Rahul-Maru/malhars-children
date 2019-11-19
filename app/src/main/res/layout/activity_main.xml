@@ -240,7 +240,7 @@
                                 android:textSize="14sp" />
                         </LinearLayout>
                         <Button
-                            android:id="@+id/a0"
+                            android:onClick="add"
                             android:tag="a0"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
