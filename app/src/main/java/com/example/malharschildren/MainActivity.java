@@ -41,34 +41,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    /*public void spinnerClick(View view) {
-        Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");
-        Spinner sizeView = (Spinner) view;
-
-        String selection = sizeView.getSelectedItem().toString();
-        String tag = sizeView.getTag().toString();
-        int tagNum = tag.charAt(1) - '0';
-
-        int quantityId = resources.getIdentifier("q" + tagNum, "id", thisPackage);
-        TextView quantityView = findViewById(quantityId);
-
-        int size = selection.charAt(0);
-
-        if (size == '1') {
-            size = 10 + selection.charAt(1);
-        }
-
-        size -= '8';
-
-        quantityView.setText(quantities[tagNum][size]);
-    }*/
+    /*public void spinnerClick(View view) {Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");Spinner sizeView = (Spinner) view;String selection = sizeView.getSelectedItem().toString();String tag = sizeView.getTag().toString();
+        int tagNum = tag.charAt(1) - '0';int quantityId = resources.getIdentifier("q" + tagNum, "id", thisPackage);
+        TextView quantityView = findViewById(quantityId);int size = selection.charAt(0);
+        if (size == '1') {size = 10 + selection.charAt(1);}size -= '8';
+        quantityView.setText(quantities[tagNum][size]);}*/
 
     public void click(View view) {
         //gets tag (ex. b5) of view that calls this method
         String tag = view.getTag().toString();
         //gets second char in tag (ex. 5), textNum and the first in tag (ex. b), clickType
-        int textNum = tag.charAt(1) - '0';
+        char textNum = tag.charAt(1);
         int size;
         char clickType = tag.charAt(0);
         int quantity;
@@ -90,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         size -= '8';
 
+        textNum = (char) Integer.parseInt(textNum + "", 16);
         quantity = quantities[textNum][size][flavorSelection];
 
         if (clickType == 'm') {
@@ -128,10 +112,11 @@ public class MainActivity extends AppCompatActivity {
                 for (int k = 0; k < maxFlavors; k++) {
                     if (quantities[i][j][k] != 0) {
                         unit += 1;
-                        TextView nameView = findViewByString("n" + i);
-                        EditText priceView = findViewByString("p" + i);
-                        Spinner flavorView = findViewByString("f" + i);
-                        TextView quantityView = findViewByString("q" + i);
+                        String hex = Integer.toHexString(i);
+                        TextView nameView = findViewByString("n" + hex);
+                        EditText priceView = findViewByString("p" + hex);
+                        Spinner flavorView = findViewByString("f" + hex);
+                        TextView quantityView = findViewByString("q" + hex);
 
                         name = nameView.getText().toString();
                         String flavor = flavorView.getItemAtPosition(k).toString();
@@ -150,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         message += "Grand Total: ₹" + total + "\n\n\n" +
-        "Warmly,\n";
+                "Warmly,\n";
 
         Log.e("", "submit: " + message);
 
@@ -176,8 +161,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void reset() {
         for (int i = 0; i < quantities.length; i++) {
-            for (int j = 0; j < sizes; j ++) {
-                TextView quantityView = findViewByString("q" + i);
+            for (int j = 0; j < sizes; j++) {
+                String hex = Integer.toHexString(i);
+                TextView quantityView = findViewByString("q" + hex);
                 quantities[i][j] = new int[maxFlavors];
                 quantityView.setText("0");
             }
@@ -189,7 +175,5 @@ public class MainActivity extends AppCompatActivity {
         return (T) findViewById(id);
     }
 
-
-    
 
 }
