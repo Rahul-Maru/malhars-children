@@ -104,8 +104,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
-                    android:text="AIRIE"
+                    android:layout_marginTop="16dp"
+                    android:text="Airie"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -172,11 +172,11 @@
 
                             <Spinner
                                 android:id="@+id/f0"
-                                android:tag="f0"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/noFlavourSpinner"
+                                android:tag="f0"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -230,7 +230,7 @@
                                 android:id="@+id/p0"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="900"
@@ -239,13 +239,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:onClick="add"
-                            android:tag="a0"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:onClick="add"
+                            android:tag="a0"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -263,7 +263,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Kaftan"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -312,8 +312,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/kaftanSizeDropdown"
-                                android:textAlignment="center"
-                                android:tag="z1"/>
+                                android:tag="z1"
+                                android:textAlignment="center" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -331,11 +331,11 @@
 
                             <Spinner
                                 android:id="@+id/f1"
-                                android:tag="f1"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/noFlavourSpinner"
+                                android:tag="f1"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -389,7 +389,7 @@
                                 android:id="@+id/p1"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="950"
@@ -398,12 +398,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a1"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a1"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -421,7 +422,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Vest"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -470,8 +471,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/sizeDropdown"
-                                android:textAlignment="center"
-                                android:tag="z2"/>
+                                android:tag="z2"
+                                android:textAlignment="center" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -489,11 +490,11 @@
 
                             <Spinner
                                 android:id="@+id/f2"
-                                android:tag="f2"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/vestFlavourSpinner"
+                                android:tag="f2"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -547,7 +548,7 @@
                                 android:id="@+id/p2"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="650"
@@ -556,12 +557,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a2"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a2"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -579,7 +581,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Boxy"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -647,11 +649,11 @@
 
                             <Spinner
                                 android:id="@+id/f3"
-                                android:tag="f3"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/noFlavourSpinner"
+                                android:tag="f3"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -705,7 +707,7 @@
                                 android:id="@+id/p3"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="650"
@@ -714,12 +716,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a3"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a3"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -737,7 +740,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Olly"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -805,11 +808,11 @@
 
                             <Spinner
                                 android:id="@+id/f4"
-                                android:tag="f4"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/ollyFlavourSpinner"
+                                android:tag="f4"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -863,7 +866,7 @@
                                 android:id="@+id/p4"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="775"
@@ -872,12 +875,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a4"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a4"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -895,7 +899,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Farsi"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -963,11 +967,11 @@
 
                             <Spinner
                                 android:id="@+id/f5"
-                                android:tag="f5"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/noFlavourSpinner"
+                                android:tag="f5"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1021,7 +1025,7 @@
                                 android:id="@+id/p5"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="950"
@@ -1030,12 +1034,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a5"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a5"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1053,7 +1058,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Shirt"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1121,11 +1126,11 @@
 
                             <Spinner
                                 android:id="@+id/f6"
-                                android:tag="f6"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/shirtFlavourSpinner"
+                                android:tag="f6"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1179,7 +1184,7 @@
                                 android:id="@+id/p6"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="850"
@@ -1188,12 +1193,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a6"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a6"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1211,7 +1217,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Kurta"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1279,11 +1285,11 @@
 
                             <Spinner
                                 android:id="@+id/f7"
-                                android:tag="f7"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/kurtaFlavourSpinner"
+                                android:tag="f7"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1337,7 +1343,7 @@
                                 android:id="@+id/p7"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="960"
@@ -1346,12 +1352,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a7"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a7"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1369,7 +1376,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Tunic"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1437,11 +1444,11 @@
 
                             <Spinner
                                 android:id="@+id/f8"
-                                android:tag="f8"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/tunicFlavourSpinner"
+                                android:tag="f8"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1495,7 +1502,7 @@
                                 android:id="@+id/p8"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="1060"
@@ -1504,12 +1511,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a8"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a8"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1527,7 +1535,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Shift"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1595,11 +1603,11 @@
 
                             <Spinner
                                 android:id="@+id/f9"
-                                android:tag="f9"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/shiftFlavourSpinner"
+                                android:tag="f9"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1653,7 +1661,7 @@
                                 android:id="@+id/p9"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="1450"
@@ -1662,12 +1670,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="a9"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="a9"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1685,7 +1694,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Calla"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1753,11 +1762,11 @@
 
                             <Spinner
                                 android:id="@+id/fa"
-                                android:tag="fa"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/callaFlavourSpinner"
+                                android:tag="fa"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1811,7 +1820,7 @@
                                 android:id="@+id/pa"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="1550"
@@ -1820,12 +1829,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="aa"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="aa"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1843,7 +1853,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Palazzo"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1911,11 +1921,11 @@
 
                             <Spinner
                                 android:id="@+id/fb"
-                                android:tag="fb"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/palazzoFlavourSpinner"
+                                android:tag="fb"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1969,7 +1979,7 @@
                                 android:id="@+id/pb"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
+
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="975"
@@ -1978,12 +1988,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="ab"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="ab"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2001,7 +2012,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Everybody Pants"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -2069,11 +2080,11 @@
 
                             <Spinner
                                 android:id="@+id/fc"
-                                android:tag="fc"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/everybodyPantsFlavourSpinner"
+                                android:tag="fc"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2127,7 +2138,6 @@
                                 android:id="@+id/pc"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="1200"
@@ -2136,12 +2146,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="ac"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="ac"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2159,7 +2170,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="BLU Pants"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -2227,11 +2238,11 @@
 
                             <Spinner
                                 android:id="@+id/fd"
-                                android:tag="fd"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/noFlavourSpinner"
+                                android:tag="fd"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2285,7 +2296,6 @@
                                 android:id="@+id/pd"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="850"
@@ -2294,12 +2304,13 @@
                         </LinearLayout>
 
                         <Button
-                            android:tag="ad"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
+                            android:tag="ad"
+                            android:onClick="add"
                             android:text="ADD"
                             android:textColor="#ffffff" />
                     </LinearLayout>
