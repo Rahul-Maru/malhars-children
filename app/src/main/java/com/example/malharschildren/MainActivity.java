@@ -159,8 +159,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
         // raina.malharschildren@gmail.com
-        intent.putExtra(Intent.EXTRA_CC, new String[]{"rahulmar3507@gmail.com", "suma.maru@gmail.com"});
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Malhar's Children Invoice");
+        intent.putExtra(Intent.EXTRA_CC, new String[]{"raina.malharschildren@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Invoice from Malhar's Children");
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
@@ -188,8 +188,5 @@ public class MainActivity extends AppCompatActivity {
         int id = resources.getIdentifier(name, "id", thisPackage);
         return (T) findViewById(id);
     }
-
-
     
-
 }
