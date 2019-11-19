@@ -239,6 +239,7 @@
                         </LinearLayout>
 
                         <Button
+                            android:onClick="add"
                             android:tag="a0"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"

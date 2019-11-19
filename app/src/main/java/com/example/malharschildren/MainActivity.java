@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     int maxFlavors = 4;
     int bill = 4;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
+    int[][][] temp = new int[styles][sizes][maxFlavors];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 0; j < sizes; j++) {
                 for (int k = 0; k < maxFlavors; k++) {
                     quantities[i][j][k] = 0;
+                    temp[i][j][k] = 0;
                 }
             }
             String hex = Integer.toHexString(i);
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
                     tagNum = (char) Integer.parseInt(tagNum + "", 16);
                     int index = tagNum;
-                    quantityView.setText(String.valueOf(quantities[index][position][selectedPos]));
+                    quantityView.setText(String.valueOf(temp[index][position][selectedPos]));
                 }
 
                 @Override
@@ -71,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
                     tagNum = (char) Integer.parseInt(tagNum + "", 16);
                     int index = tagNum;
-                    quantityView.setText(String.valueOf(quantities[index][selectedPos][position]));
+                    quantityView.setText(String.valueOf(temp[index][selectedPos][position]));
                 }
 
                 @Override
@@ -109,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         size = sizeView.getSelectedItemPosition();
 
         textNum = (char) Integer.parseInt(textNum + "", 16);
-        quantity = quantities[textNum][size][flavorSelection];
+        quantity = temp[textNum][size][flavorSelection];
 
         if (clickType == 'm') {
             if (quantity > 0) {
@@ -120,7 +123,18 @@ public class MainActivity extends AppCompatActivity {
             quantity++;
         }
         quantityView.setText("" + (quantity));
-        quantities[textNum][size][flavorSelection] = quantity;
+        temp[textNum][size][flavorSelection] = quantity;
+    }
+
+
+    public void add(View view) {
+        int tag = Integer.parseInt(view.getTag().toString().charAt(1) + "", 16);
+        for (int i = 0; i < sizes; i++) {
+            for (int j = 0; j < maxFlavors; j++) {
+                quantities[tag][i][j] += temp[tag][i][j];
+            }
+        }
+        reset(tag);
     }
 
     public void submit(View view) {
@@ -200,10 +214,37 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
                 String hex = Integer.toHexString(i);
+
                 TextView quantityView = findViewByString("q" + hex);
+                Spinner flavorView = findViewByString("f" + hex);
+                Spinner sizeView = findViewByString("z" + hex);
+                EditText priceView = findViewByString("p" + hex);
+
                 quantities[i][j] = new int[maxFlavors];
+                temp[i][j] = new int[maxFlavors];
+
                 quantityView.setText("0");
+                sizeView.setSelection(0);
+                flavorView.setSelection(0);
             }
+        }
+    }
+
+    public void reset(int id) {
+        for (int i = 0; i < sizes; i++) {
+            String hex = Integer.toHexString(id);
+
+            TextView quantityView = findViewByString("q" + hex);
+            Spinner flavorView = findViewByString("f" + hex);
+            Spinner sizeView = findViewByString("z" + hex);
+            EditText priceView = findViewByString("p" + hex);
+
+
+            temp[id][i] = new int[maxFlavors];
+
+            quantityView.setText("0");
+            sizeView.setSelection(0);
+            flavorView.setSelection(0);
         }
     }
 
