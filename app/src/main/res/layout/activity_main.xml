@@ -174,6 +174,7 @@
 
                             <Spinner
                                 android:id="@+id/f0"
+                                android:tag="f0"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -239,6 +240,8 @@
                                 android:textSize="14sp" />
                         </LinearLayout>
                         <Button
+                            android:id="@+id/a0"
+                            android:tag="a0"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:background="@color/colorAccent"
@@ -310,7 +313,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/kaftanSizeDropdown"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:tag="z1"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -328,6 +332,7 @@
 
                             <Spinner
                                 android:id="@+id/f1"
+                                android:tag="f1"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -456,7 +461,8 @@
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/sizeDropdown"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:tag="z2"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -474,6 +480,7 @@
 
                             <Spinner
                                 android:id="@+id/f2"
+                                android:tag="f2"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -621,6 +628,7 @@
 
                             <Spinner
                                 android:id="@+id/f3"
+                                android:tag="f3"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -768,6 +776,7 @@
 
                             <Spinner
                                 android:id="@+id/f4"
+                                android:tag="f4"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -915,6 +924,7 @@
 
                             <Spinner
                                 android:id="@+id/f5"
+                                android:tag="f5"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -1062,6 +1072,7 @@
 
                             <Spinner
                                 android:id="@+id/f6"
+                                android:tag="f6"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -1209,6 +1220,7 @@
 
                             <Spinner
                                 android:id="@+id/f7"
+                                android:tag="f7"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -1356,6 +1368,7 @@
 
                             <Spinner
                                 android:id="@+id/f8"
+                                android:tag="f8"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -1503,6 +1516,7 @@
 
                             <Spinner
                                 android:id="@+id/f9"
+                                android:tag="f9"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -1650,6 +1664,7 @@
 
                             <Spinner
                                 android:id="@+id/fa"
+                                android:tag="fa"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -1797,6 +1812,7 @@
 
                             <Spinner
                                 android:id="@+id/fb"
+                                android:tag="fb"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -1944,6 +1960,7 @@
 
                             <Spinner
                                 android:id="@+id/fc"
+                                android:tag="fc"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -2091,6 +2108,7 @@
 
                             <Spinner
                                 android:id="@+id/fd"
+                                android:tag="fd"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
@@ -2159,7 +2177,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            /*Paste above this line*/
+            <!--Paste above this line-->
         </LinearLayout>
     </ScrollView>
 
