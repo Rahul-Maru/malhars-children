@@ -238,6 +238,7 @@
                         </LinearLayout>
 
                         <Button
+                            android:tag="a0"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_marginBottom="10dp"
@@ -268,7 +269,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -276,7 +277,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -391,6 +392,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -414,7 +425,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -422,7 +433,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -537,6 +548,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -560,7 +581,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -568,7 +589,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -684,6 +705,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -707,7 +738,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -715,7 +746,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -831,6 +862,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -854,7 +895,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -862,7 +903,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -978,6 +1019,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -1001,7 +1052,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1009,7 +1060,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -1125,6 +1176,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -1148,7 +1209,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1156,7 +1217,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -1272,6 +1333,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -1295,7 +1366,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1303,7 +1374,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -1419,6 +1490,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -1442,7 +1523,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1450,7 +1531,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -1566,6 +1647,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="a9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -1589,7 +1680,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1597,7 +1688,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -1713,6 +1804,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="aa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -1736,7 +1837,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1744,7 +1845,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -1860,6 +1961,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="ab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -1883,7 +1994,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1891,7 +2002,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -2007,6 +2118,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="ac"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -2030,7 +2151,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="200dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -2038,7 +2159,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
@@ -2154,6 +2275,16 @@
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
+
+                        <Button
+                            android:tag="ad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:text="ADD"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
