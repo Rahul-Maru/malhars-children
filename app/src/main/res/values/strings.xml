@@ -9,6 +9,17 @@
         <item>12&#8211;14</item>
     </string-array>
 
+    <string-array name="kaftanSizeDropdown">
+        <item>S&#8211;M</item>
+        <item>M&#8211;L</item>
+    </string-array>
+
+    <string-array name="palazzoSizeDropdown">
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+    </string-array>
+
     <string-array name="noFlavourSpinner">
         <item>Not available</item>
     </string-array>
@@ -45,7 +56,7 @@
     <string-array name="shiftFlavourSpinner">
         <item>Pomo</item>
         <item>Indigo</item>
-        <item>Stripes</item>
+        <item>Orange/Green</item>
     </string-array>
 
     <string-array name="callaFlavourSpinner">

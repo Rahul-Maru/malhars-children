@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     /*public void spinnerClick(View view) {Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");Spinner sizeView = (Spinner) view;String selection = sizeView.getSelectedItem().toString();String tag = sizeView.getTag().toString();
         int tagNum = tag.charAt(1) - '0';int quantityId = resources.getIdentifier("q" + tagNum, "id", thisPackage);
         TextView quantityView = findViewById(quantityId);int size = selection.charAt(0);
@@ -87,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         }
         quantityView.setText("" + (quantity));
         quantities[textNum][size][flavorSelection] = quantity;
-
     }
 
     public void submit(View view) {
@@ -152,6 +150,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         reset();
+        nameField.setText("");
+        emailField.setText("");
+        phoneField.setText("");
     }
 
     public void resetClick(View view) {
