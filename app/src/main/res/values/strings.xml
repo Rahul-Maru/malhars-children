@@ -3,7 +3,6 @@
 
     <string-array name="sizeDropdown">
         <item>8 - 9</item>
-        <item>8 - 9</item>
         <item>9 - 10</item>
         <item>10 - 11</item>
         <item>11 - 12</item>
@@ -22,7 +21,7 @@
     </string-array>
 
     <string-array name="noFlavourSpinner">
-        <item>Not available</item>
+        <item>None</item>
     </string-array>
 
     <string-array name="vestFlavourSpinner">
@@ -75,5 +74,15 @@
         <item>Pomo</item>
     </string-array>
 
+    <string-array name="prices">
+        <item>900</item>
+        <item>950</item>
+        <item>650</item>
+        <item>650</item>
+        <item>775</item>
+        <item>950</item>
+        <item>850</item>
+
+    </string-array>
 
 </resources>
