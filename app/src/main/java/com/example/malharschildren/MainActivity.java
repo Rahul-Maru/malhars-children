@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -34,12 +35,52 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
-                quantities[i][j] = new int[maxFlavors];
+                for (int k = 0; k < maxFlavors; k++) {
+                    quantities[i][j][k] = 0;
+                }
             }
-            Spinner sizeView = findViewByString("z" + i);
-            //sizeView.setOnItemSelectedListener();
-        }
+            String hex = Integer.toHexString(i);
+            Spinner sizeView = findViewByString("z" + hex);
+            Spinner flavorView = findViewByString("f" + hex);
+            sizeView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    String tag = parent.getTag().toString();
+                    char tagNum = tag.charAt(1);
+                    TextView quantityView = findViewByString("q" + tagNum);
+                    Spinner flavorView = findViewByString("f" + tagNum);
+                    int selectedPos = flavorView.getSelectedItemPosition();
 
+                    tagNum = (char) Integer.parseInt(tagNum + "", 16);
+                    int index = tagNum;
+                    quantityView.setText(String.valueOf(quantities[index][position][selectedPos]));
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+                    // Do nothing (how much Amma knows)
+                }
+            });
+            flavorView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    String tag = parent.getTag().toString();
+                    char tagNum = tag.charAt(1);
+                    TextView quantityView = findViewByString("q" + tagNum);
+                    Spinner sizeView = findViewByString("z" + tagNum);
+                    int selectedPos = sizeView.getSelectedItemPosition();
+
+                    tagNum = (char) Integer.parseInt(tagNum + "", 16);
+                    int index = tagNum;
+                    quantityView.setText(String.valueOf(quantities[index][selectedPos][position]));
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+                    // Do nothing (how much Amma knows)
+                }
+            });
+        }
     }
 
     /*public void spinnerClick(View view) {Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");Spinner sizeView = (Spinner) view;String selection = sizeView.getSelectedItem().toString();String tag = sizeView.getTag().toString();
@@ -114,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     if (quantities[i][j][k] != 0) {
                         unit += 1;
                         String hex = Integer.toHexString(i);
+                        Spinner sizeView = findViewByString("z" + hex);
                         TextView nameView = findViewByString("n" + hex);
                         EditText priceView = findViewByString("p" + hex);
                         Spinner flavorView = findViewByString("f" + hex);
