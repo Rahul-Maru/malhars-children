@@ -35,9 +35,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:inputType="textCapWords"
                     android:hint="Enter name"
                     android:imeOptions="actionDone"
+                    android:inputType="textCapWords"
                     android:singleLine="true"
                     android:textAlignment="center" />
             </LinearLayout>
@@ -45,8 +45,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="8dp"
-                >
+                android:layout_marginHorizontal="8dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -61,9 +60,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:inputType="textEmailAddress"
                     android:hint="Enter email"
                     android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
                     android:singleLine="true"
                     android:textAlignment="center" />
             </LinearLayout>
@@ -72,8 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="30dp"
-                >
+                android:layout_marginBottom="40dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -88,9 +86,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:inputType="phone"
                     android:hint="Enter phone number"
                     android:imeOptions="actionDone"
+                    android:inputType="phone"
                     android:singleLine="true"
                     android:textAlignment="center" />
             </LinearLayout>
@@ -105,8 +103,8 @@
                     android:id="@+id/n0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="AIRIE"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -120,13 +118,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="24dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/airie"/>
+                        android:src="@drawable/airie" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -191,9 +189,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m0"/>
+                                android:tag="m0"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q0"
@@ -203,15 +201,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p0"/>
+                                android:tag="p0"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -224,28 +222,29 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p0"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="900"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
+
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
                             android:background="@color/colorAccent"
                             android:text="ADD"
-                            android:textColor="#ffffff"
-                            android:layout_weight="1"
-                            android:layout_marginBottom="10dp"/>
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -260,8 +259,8 @@
                     android:id="@+id/n1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="KAFTAN"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -275,13 +274,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/kaftan"/>
+                        android:src="@drawable/kaftan" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -357,8 +356,8 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
@@ -378,19 +377,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p1"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
-                                android:text="960"
+                                android:text="950"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -406,8 +405,8 @@
                     android:id="@+id/n2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="VEST"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -421,13 +420,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/vest_flamingo"/>
+                        android:src="@drawable/vest_flamingo" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -491,9 +490,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m2"/>
+                                android:tag="m2"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q2"
@@ -503,15 +502,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p2"/>
+                                android:tag="p2"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -524,19 +523,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p2"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="650"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -552,8 +551,8 @@
                     android:id="@+id/n3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="BOXY"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -567,13 +566,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/boxy"/>
+                        android:src="@drawable/boxy" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -638,9 +637,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m3"/>
+                                android:tag="m3"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q3"
@@ -650,15 +649,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p3"/>
+                                android:tag="p3"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -671,19 +670,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p3"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="650"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -699,8 +698,8 @@
                     android:id="@+id/n4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="OLLY"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -714,13 +713,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/olly_octopus"/>
+                        android:src="@drawable/olly_octopus" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -785,9 +784,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m4"/>
+                                android:tag="m4"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q4"
@@ -797,15 +796,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p4"/>
+                                android:tag="p4"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -818,19 +817,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p4"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="775"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -846,8 +845,8 @@
                     android:id="@+id/n5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="FARSI"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -861,13 +860,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/farsi"/>
+                        android:src="@drawable/farsi" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -932,9 +931,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m5"/>
+                                android:tag="m5"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q5"
@@ -944,15 +943,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p5"/>
+                                android:tag="p5"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -965,19 +964,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p5"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="950"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -993,8 +992,8 @@
                     android:id="@+id/n6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="SHIRT"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1008,13 +1007,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/shirt_ziggy"/>
+                        android:src="@drawable/shirt_ziggy" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -1079,9 +1078,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m6"/>
+                                android:tag="m6"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q6"
@@ -1091,15 +1090,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p6"/>
+                                android:tag="p6"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1112,19 +1111,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p6"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="850"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -1140,8 +1139,8 @@
                     android:id="@+id/n7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="KURTA"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1155,13 +1154,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/kurta_cloud"/>
+                        android:src="@drawable/kurta_cloud" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -1226,9 +1225,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m7"/>
+                                android:tag="m7"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q7"
@@ -1238,15 +1237,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p7"/>
+                                android:tag="p7"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1259,19 +1258,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p7"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="960"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -1287,8 +1286,8 @@
                     android:id="@+id/n8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="TUNIC"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1302,13 +1301,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/tunic_green"/>
+                        android:src="@drawable/tunic_green" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -1373,9 +1372,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m8"/>
+                                android:tag="m8"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q8"
@@ -1385,15 +1384,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p8"/>
+                                android:tag="p8"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1406,19 +1405,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p8"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="1060"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -1434,8 +1433,8 @@
                     android:id="@+id/n9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="SHIFT"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1449,13 +1448,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/shift_indigo"/>
+                        android:src="@drawable/shift_indigo" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -1520,9 +1519,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="m9"/>
+                                android:tag="m9"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/q9"
@@ -1532,15 +1531,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="p9"/>
+                                android:tag="p9"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1553,19 +1552,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/p9"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="1450"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -1581,8 +1580,8 @@
                     android:id="@+id/na"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="CALLA"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1596,13 +1595,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/calla_green"/>
+                        android:src="@drawable/calla_green" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -1667,9 +1666,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="ma"/>
+                                android:tag="ma"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/qa"
@@ -1679,15 +1678,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="pa"/>
+                                android:tag="pa"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1700,19 +1699,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/pa"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="1550"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -1728,8 +1727,8 @@
                     android:id="@+id/nb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="PALAZZO"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1743,13 +1742,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/palazzo_indigo"/>
+                        android:src="@drawable/palazzo_indigo" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -1814,9 +1813,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="mb"/>
+                                android:tag="mb"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/qb"
@@ -1826,15 +1825,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="pb"/>
+                                android:tag="pb"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1847,19 +1846,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/pb"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="975"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -1875,8 +1874,8 @@
                     android:id="@+id/nc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="EVERYBODY PANTS"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -1890,13 +1889,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/everybody_pomo"/>
+                        android:src="@drawable/everybody_pomo" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -1961,9 +1960,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="mc"/>
+                                android:tag="mc"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/qc"
@@ -1973,15 +1972,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="pc"/>
+                                android:tag="pc"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1994,19 +1993,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/pc"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="1200"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -2022,8 +2021,8 @@
                     android:id="@+id/nd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
                     android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="8dp"
                     android:text="BLU PANTS"
                     android:textColor="#555555"
                     android:textSize="18sp" />
@@ -2037,13 +2036,13 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="32dp"
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/blu_pants"/>
+                        android:src="@drawable/blu_pants" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -2108,9 +2107,9 @@
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="-"
                                 android:onClick="click"
-                                android:tag="md"/>
+                                android:tag="md"
+                                android:text="-" />
 
                             <TextView
                                 android:id="@+id/qd"
@@ -2120,15 +2119,15 @@
                                 android:background="@drawable/customborder"
                                 android:hint="Qty"
                                 android:text="0"
-                                android:textSize="18sp"
-                                android:textAlignment="center" />
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
 
                             <Button
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:text="+"
                                 android:onClick="click"
-                                android:tag="pd"/>
+                                android:tag="pd"
+                                android:text="+" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -2141,19 +2140,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price:"
+                                android:text="Price (₹) :"
                                 android:textSize="15sp" />
 
                             <EditText
                                 android:id="@+id/pd"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="960"
                                 android:hint="Price"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
+                                android:text="850"
                                 android:textAlignment="center"
-                                android:textSize="14sp" />
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -2176,27 +2175,27 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="#96CDEB"
+                android:layout_weight="1"
+                android:background="#ED6FB2CA"
                 android:onClick="resetClick"
                 android:text="Reset"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:layout_weight="1" />
+                android:textSize="20sp" />
 
             <View
                 android:layout_width="3dp"
                 android:layout_height="match_parent"
-                android:background="#ffffff"/>
+                android:background="#ffffff" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="#96CDEB"
+                android:layout_weight="1"
+                android:background="#ED6FB2CA"
                 android:onClick="submit"
                 android:text="Submit"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textSize="20sp" />
         </LinearLayout>
 
     </RelativeLayout>

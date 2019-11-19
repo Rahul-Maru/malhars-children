@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     int bill = 4;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,37 +31,7 @@ public class MainActivity extends AppCompatActivity {
         resources = getResources();
         thisPackage = MainActivity.this.getPackageName();
 
-        /*for (int i = 0; i < quantities.length; i++) {
-            for (int j = 0; j < sizes; j++) {
-                quantities[i][j] = new int[maxFlavours];
-            }
-            // Spinner sizeView = findViewByString("z" + i);
-        }*/
-
     }
-
-
-    /*public void spinnerClick(View view) {
-        Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");
-        Spinner sizeView = (Spinner) view;
-
-        String selection = sizeView.getSelectedItem().toString();
-        String tag = sizeView.getTag().toString();
-        int tagNum = tag.charAt(1) - '0';
-
-        int quantityId = resources.getIdentifier("q" + tagNum, "id", thisPackage);
-        TextView quantityView = findViewById(quantityId);
-
-        int size = selection.charAt(0);
-
-        if (size == '1') {
-            size = 10 + selection.charAt(1);
-        }
-
-        size -= '8';
-
-        quantityView.setText(quantities[tagNum][size]);
-    }*/
 
     public void click(View view) {
         //gets tag (ex. b5) of view that calls this method
@@ -141,16 +110,16 @@ public class MainActivity extends AppCompatActivity {
                         int amount = quantity * price;
                         total += amount;
 
-                        message += "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
-                                + "    Size: " + size + "\n"
-                                + "    Price: ₹" + price + "\n"
-                                + "    Amount: ₹" + amount + "\n\n";
+                          message +=      "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
+                                        + "    Size: " + size + "\n"
+                                        + "    Price: ₹" + price + "\n"
+                                        + "    Amount: ₹" + amount + "\n\n";
                     }
                 }
             }
         }
         message += "Grand Total: ₹" + total + "\n\n\n" +
-        "Warmly,\n";
+                "Warmly,\n";
 
         Log.e("", "submit: " + message);
 
@@ -176,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void reset() {
         for (int i = 0; i < quantities.length; i++) {
-            for (int j = 0; j < sizes; j ++) {
+            for (int j = 0; j < sizes; j++) {
                 TextView quantityView = findViewByString("q" + i);
                 quantities[i][j] = new int[maxFlavors];
                 quantityView.setText("0");
@@ -188,5 +157,5 @@ public class MainActivity extends AppCompatActivity {
         int id = resources.getIdentifier(name, "id", thisPackage);
         return (T) findViewById(id);
     }
-    
+
 }

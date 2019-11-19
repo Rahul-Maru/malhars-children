@@ -2,16 +2,17 @@
     <string name="app_name">Malhar\'s Children</string>
 
     <string-array name="sizeDropdown">
-        <item>8&#8211;9</item>
-        <item>9&#8211;10</item>
-        <item>10&#8211;11</item>
-        <item>11&#8211;12</item>
-        <item>12&#8211;14</item>
+        <item>8 - 9</item>
+        <item>8 - 9</item>
+        <item>9 - 10</item>
+        <item>10 - 11</item>
+        <item>11 - 12</item>
+        <item>12 - 14</item>
     </string-array>
 
     <string-array name="kaftanSizeDropdown">
-        <item>S&#8211;M</item>
-        <item>M&#8211;L</item>
+        <item>S/M</item>
+        <item>M/L</item>
     </string-array>
 
     <string-array name="palazzoSizeDropdown">
