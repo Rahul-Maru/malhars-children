@@ -107,13 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //char - int conversion (Ascii): '0' - 48, '1' - 49 ... '8' - 56, '9' - 57.
-        size = sizeSelection.charAt(0);
-
-        if (size == '1') {
-            size = 10 + sizeSelection.charAt(1);
-        }
-
-        size -= '8';
+        size = sizeView.getSelectedItemPosition();
 
         textNum = (char) Integer.parseInt(textNum + "", 16);
         quantity = quantities[textNum][size][flavorSelection];
@@ -163,14 +157,14 @@ public class MainActivity extends AppCompatActivity {
 
                         name = nameView.getText().toString();
                         String flavor = flavorView.getItemAtPosition(k).toString();
-                        flavor = (flavor.equalsIgnoreCase("Not available") ? "" : flavor);
-                        String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045);
+                        flavor = (flavor.equalsIgnoreCase("not available") ? "" : "(" + flavor + ")");
+                        String size = sizeView.getItemAtPosition(j).toString();
                         int quantity = quantities[i][j][k];
                         int price = Integer.parseInt(priceView.getText().toString());
                         int amount = quantity * price;
                         total += amount;
 
-                        message += "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
+                        message += "    " + unit + ". " + name + " " + flavor + " X " + quantity + "\n"
                                 + "    Size: " + size + "\n"
                                 + "    Price: ₹" + price + "\n"
                                 + "    Amount: ₹" + amount + "\n\n";
