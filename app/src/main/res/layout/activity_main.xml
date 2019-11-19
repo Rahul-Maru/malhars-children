@@ -262,7 +262,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="KAFTAN"
+                    android:text="Kaftan"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -418,7 +418,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="VEST"
+                    android:text="Vest"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -574,7 +574,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="BOXY"
+                    android:text="Boxy"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -731,7 +731,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="OLLY"
+                    android:text="Olly"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -888,7 +888,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="FARSI"
+                    android:text="Farsi"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -1045,7 +1045,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="SHIRT"
+                    android:text="Shirt"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -1202,7 +1202,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="KURTA"
+                    android:text="Kurta"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -1359,7 +1359,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="TUNIC"
+                    android:text="Tunic"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -1516,7 +1516,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="SHIFT"
+                    android:text="Shift"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -1673,7 +1673,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="CALLA"
+                    android:text="Calla"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -1830,7 +1830,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="PALAZZO"
+                    android:text="Palazzo"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -1987,7 +1987,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="EVERYBODY PANTS"
+                    android:text="Everybody Pants"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
@@ -2144,7 +2144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="8dp"
-                    android:text="BLU PANTS"
+                    android:text="BLU Pants"
                     android:textColor="#555555"
                     android:textSize="18sp" />
 
