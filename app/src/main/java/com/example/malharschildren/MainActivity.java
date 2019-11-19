@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
         }
         quantityView.setText("" + (quantity));
         quantities[textNum][size][flavorSelection] = quantity;
-
     }
 
     public void submit(View view) {
