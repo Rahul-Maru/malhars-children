@@ -2,36 +2,41 @@ package com.example.malharschildren;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import static java.lang.Math.round;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    Context appContext;
     Resources resources;
     String thisPackage;
+
     int styles = 14;
     int sizes = 5;
     int maxFlavors = 4;
     int bill = 4;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
     int[][][] temp = new int[styles][sizes][maxFlavors];
+    int[][] defaultPrices = new int[][]{{900}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
+            {960, 960, 960, 960}, {1060, 1060}, {1450}, {1550}, {975}, {1200}, {850}};
+    int[][][] prices = new int[styles][sizes][maxFlavors];
+    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        appContext = getApplicationContext();
         resources = getResources();
         thisPackage = MainActivity.this.getPackageName();
 
@@ -44,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
             }
             String hex = Integer.toHexString(i);
             Spinner sizeView = findViewByString("z" + hex);
-          
             Spinner flavorView = findViewByString("f" + hex);
             sizeView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -58,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     tagNum = (char) Integer.parseInt(tagNum + "", 16);
                     int index = tagNum;
                     quantityView.setText(String.valueOf(temp[index][position][selectedPos]));
+
                 }
 
                 @Override
@@ -72,10 +77,14 @@ public class MainActivity extends AppCompatActivity {
                     char tagNum = tag.charAt(1);
                     TextView quantityView = findViewByString("q" + tagNum);
                     Spinner sizeView = findViewByString("z" + tagNum);
+                    EditText priceView = findViewByString("p" + tagNum);
+
                     int selectedPos = sizeView.getSelectedItemPosition();
 
                     tagNum = (char) Integer.parseInt(tagNum + "", 16);
                     int index = tagNum;
+
+                    priceView.setText(String.valueOf(defaultPrices[tagNum][position]));
                     quantityView.setText(String.valueOf(temp[index][selectedPos][position]));
                 }
 
@@ -131,12 +140,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void add(View view) {
         int tag = Integer.parseInt(view.getTag().toString().charAt(1) + "", 16);
+
+        TextView nameView = findViewByString("n" + tag);
+
         for (int i = 0; i < sizes; i++) {
             for (int j = 0; j < maxFlavors; j++) {
-                quantities[tag][i][j] += temp[tag][i][j];
+                quantities[tag][i][j] = temp[tag][i][j];
+                //message += quantities[tag][i][j];
             }
         }
-        reset(tag);
+        toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_LONG);
+        toast.show();
+        resetAdd(tag);
     }
 
     public void submit(View view) {
@@ -172,17 +187,17 @@ public class MainActivity extends AppCompatActivity {
 
                         name = nameView.getText().toString();
                         String flavor = flavorView.getItemAtPosition(k).toString();
-                        flavor = (flavor.equalsIgnoreCase("not available") ? "" : "(" + flavor + ")");
+                        flavor = (flavor.equalsIgnoreCase("none") ? "" : flavor);
                         String size = sizeView.getItemAtPosition(j).toString();
                         int quantity = quantities[i][j][k];
                         int price = Integer.parseInt(priceView.getText().toString());
                         int amount = quantity * price;
                         total += amount;
 
-                          message +=      "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
-                                        + "    Size: " + size + "\n"
-                                        + "    Price: ₹" + price + "\n"
-                                        + "    Amount: ₹" + amount + "\n\n";
+                        message += "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
+                                + "    Size: " + size + "\n"
+                                + "    Price: ₹" + price + "\n"
+                                + "    Amount: ₹" + amount + "\n\n";
                     }
                 }
             }
@@ -232,21 +247,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void reset(int id) {
+    public void resetAdd(int id) {
         for (int i = 0; i < sizes; i++) {
             String hex = Integer.toHexString(id);
 
-            TextView quantityView = findViewByString("q" + hex);
             Spinner flavorView = findViewByString("f" + hex);
             Spinner sizeView = findViewByString("z" + hex);
             EditText priceView = findViewByString("p" + hex);
 
-
             temp[id][i] = new int[maxFlavors];
 
-            quantityView.setText("0");
             sizeView.setSelection(0);
-            flavorView.setSelection(0);
         }
     }
 

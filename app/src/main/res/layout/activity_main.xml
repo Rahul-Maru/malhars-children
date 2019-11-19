@@ -246,7 +246,7 @@
                             android:background="@color/colorAccent"
                             android:onClick="add"
                             android:tag="a0"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -405,7 +405,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a1"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -564,7 +564,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a2"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -723,7 +723,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a3"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -882,7 +882,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a4"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1041,7 +1041,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a5"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1200,7 +1200,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a6"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1359,7 +1359,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a7"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1518,7 +1518,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a8"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1677,7 +1677,7 @@
                             android:background="@color/colorAccent"
                             android:tag="a9"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1836,7 +1836,7 @@
                             android:background="@color/colorAccent"
                             android:tag="aa"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1995,7 +1995,7 @@
                             android:background="@color/colorAccent"
                             android:tag="ab"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -2153,7 +2153,7 @@
                             android:background="@color/colorAccent"
                             android:tag="ac"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -2311,7 +2311,7 @@
                             android:background="@color/colorAccent"
                             android:tag="ad"
                             android:onClick="add"
-                            android:text="ADD"
+                            android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
@@ -2356,6 +2356,10 @@
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
 
     </RelativeLayout>
 
