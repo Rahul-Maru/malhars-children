@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         int quantity;
 
         TextView quantityView = findViewByString("q" + textNum);
+        EditText priceView = findViewByString("p" + textNum);
         Spinner sizeView = findViewByString("z" + textNum);
         Spinner flavorView = findViewByString("f" + textNum);
 
@@ -135,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         }
         quantityView.setText("" + (quantity));
         temp[textNum][size][flavorSelection] = quantity;
+        prices[textNum][size][flavorSelection] = Integer.parseInt(priceView.getText().toString());
     }
 
 
@@ -181,16 +183,15 @@ public class MainActivity extends AppCompatActivity {
                         String hex = Integer.toHexString(i);
                         Spinner sizeView = findViewByString("z" + hex);
                         TextView nameView = findViewByString("n" + hex);
-                        EditText priceView = findViewByString("p" + hex);
                         Spinner flavorView = findViewByString("f" + hex);
-                        TextView quantityView = findViewByString("q" + hex);
 
                         name = nameView.getText().toString();
                         String flavor = flavorView.getItemAtPosition(k).toString();
                         flavor = (flavor.equalsIgnoreCase("none") ? "" : flavor);
                         String size = sizeView.getItemAtPosition(j).toString();
                         int quantity = quantities[i][j][k];
-                        int price = Integer.parseInt(priceView.getText().toString());
+                        int price = prices[i][j][k];
+                        Log.e("", "submit: " + price);
                         int amount = quantity * price;
                         total += amount;
 
@@ -254,8 +255,6 @@ public class MainActivity extends AppCompatActivity {
             Spinner flavorView = findViewByString("f" + hex);
             Spinner sizeView = findViewByString("z" + hex);
             EditText priceView = findViewByString("p" + hex);
-
-            temp[id][i] = new int[maxFlavors];
 
             sizeView.setSelection(0);
         }
