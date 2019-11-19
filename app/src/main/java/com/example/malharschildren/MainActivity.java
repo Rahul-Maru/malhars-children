@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     int bill = 4;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -164,10 +163,10 @@ public class MainActivity extends AppCompatActivity {
                         int amount = quantity * price;
                         total += amount;
 
-                        message += "    " + unit + ". " + name + " " + flavor + " X " + quantity + "\n"
-                                + "    Size: " + size + "\n"
-                                + "    Price: ₹" + price + "\n"
-                                + "    Amount: ₹" + amount + "\n\n";
+                          message +=      "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
+                                        + "    Size: " + size + "\n"
+                                        + "    Price: ₹" + price + "\n"
+                                        + "    Amount: ₹" + amount + "\n\n";
                     }
                 }
             }
