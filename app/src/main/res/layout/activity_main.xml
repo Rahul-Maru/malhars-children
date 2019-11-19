@@ -1599,7 +1599,7 @@
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/calla_green"/>
+                        android:src="@drawable/stewpid"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -2040,7 +2040,7 @@
                         android:layout_weight="4"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/blu_pants"/>
+                        android:src="@drawable/stewpid"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -2156,7 +2156,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            /*Paste above this line*/
+            <!--Paste above this line-->
         </LinearLayout>
     </ScrollView>
 

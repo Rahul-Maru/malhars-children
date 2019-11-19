@@ -17,7 +17,7 @@ import static java.lang.Math.round;
 public class MainActivity extends AppCompatActivity {
     Resources resources;
     String thisPackage;
-    int styles = 3;
+    int styles = 14;
     int sizes = 5;
     int maxFlavors = 4;
     int bill = 4;
@@ -32,12 +32,13 @@ public class MainActivity extends AppCompatActivity {
         resources = getResources();
         thisPackage = MainActivity.this.getPackageName();
 
-        /*for (int i = 0; i < quantities.length; i++) {
+        for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
-                quantities[i][j] = new int[maxFlavours];
+                quantities[i][j] = new int[maxFlavors];
             }
-            // Spinner sizeView = findViewByString("z" + i);
-        }*/
+            Spinner sizeView = findViewByString("z" + i);
+            //sizeView.setOnItemSelectedListener();
+        }
 
     }
 
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
                         name = nameView.getText().toString();
                         String flavor = flavorView.getItemAtPosition(k).toString();
+                        flavor = (flavor.equalsIgnoreCase("Not available") ? "" : flavor);
                         String size = (j + 8) + " - " + round(1 + (j + 8) * 1.045);
                         int quantity = quantities[i][j][k];
                         int price = Integer.parseInt(priceView.getText().toString());
