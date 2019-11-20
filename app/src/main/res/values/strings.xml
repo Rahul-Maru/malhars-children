@@ -20,6 +20,10 @@
         <item>L</item>
     </string-array>
 
+    <string-array name="bandDropdown">
+        <item>Free size</item>
+    </string-array>
+
     <string-array name="noFlavourSpinner">
         <item>None</item>
     </string-array>

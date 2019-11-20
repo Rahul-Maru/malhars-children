@@ -224,9 +224,9 @@ public class MainActivity extends AppCompatActivity {
                         total += amount;
 
                         message += "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
-                                + "    Size: " + size + "\n"
-                                + "    Price: ₹" + price + "\n"
-                                + "    Amount: ₹" + amount + "\n\n";
+                                + "        Size: " + size + "\n"
+                                + "        Price: ₹" + price + "\n"
+                                + "        Amount: ₹" + amount + "\n\n";
                     }
                 }
             }
