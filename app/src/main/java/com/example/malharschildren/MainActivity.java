@@ -24,11 +24,10 @@ public class MainActivity extends AppCompatActivity {
     Resources resources;
     String thisPackage;
 
-    int styles = 14;
+    int cart = 0;
+    int styles = 15;
     int sizes = 5;
     int maxFlavors = 4;
-    int bill = 4;
-    int currentBill;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
     int[] temp = new int[styles];
     int[][] defaultPrices = new int[][]{{900}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
@@ -148,16 +147,18 @@ public class MainActivity extends AppCompatActivity {
         size = sizeView.getSelectedItemPosition();
 
         textNum = (char) Integer.parseInt(textNum + "", 16);
+        int quantityUpdated  = quantities[textNum][size][flavorSelection];
         quantity = temp[textNum];
+
         if (clickType == 'm') {
-            if (quantity > 0) {
+            if (quantityUpdated + quantity > 0) {
                 quantity--;
 
             }
         } else {
             quantity++;
         }
-        quantityView.setText("" + (quantities[textNum][size][flavorSelection] + quantity));
+        quantityView.setText("" + (quantityUpdated + quantity));
         temp[textNum] = quantity;
         prices[textNum][size][flavorSelection] = Integer.parseInt(priceView.getText().toString());
     }
@@ -166,18 +167,23 @@ public class MainActivity extends AppCompatActivity {
     public void add(View view) {
         int tag = Integer.parseInt(view.getTag().toString().charAt(1) + "", 16);
         TextView nameView = findViewByString("n" + tag);
+        TextView cartView = findViewByString("cart");
         Spinner sizeView = findViewByString("z" + tag);
         Spinner flavorView = findViewByString("f" + tag);
 
         int size = sizeView.getSelectedItemPosition();
         int flavor = flavorView.getSelectedItemPosition();
 
-        int quantity = 1;
+        int quantity = 0;
         quantities[tag][size][flavor] = temp[tag];
+        quantity = temp[tag];
+        cart += quantity;
+        cartView.setText(String.valueOf(cart));
+
         if (quantity == 0) {
-            toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_LONG);
+            toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_SHORT);
         } else {
-            toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_LONG);
+            toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_SHORT);
         }
         toast.show();
 
@@ -189,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
         int total = 0;
         EditText nameField = findViewByString("m0");
         EditText emailField = findViewByString("e0");
-        EditText phoneField = findViewByString("c0");
+        EditText phoneField = findViewByString("h0");
 
 
         String username = nameField.getText().toString();
@@ -258,18 +264,21 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 0; j < sizes; j++) {
                 String hex = Integer.toHexString(i);
 
+                TextView cartView = findViewByString("cart");
                 TextView quantityView = findViewByString("q" + hex);
                 Spinner flavorView = findViewByString("f" + hex);
                 Spinner sizeView = findViewByString("z" + hex);
                 EditText priceView = findViewByString("p" + hex);
                 EditText nameField = findViewByString("m0");
                 EditText emailField = findViewByString("e0");
-                EditText phoneField = findViewByString("c0");
+                EditText phoneField = findViewByString("h0");
 
 
                 quantities[i][j] = new int[maxFlavors];
                 temp[i] = 0;
+                cart = 0;
 
+                cartView.setText(String.valueOf(cart));
                 quantityView.setText("0");
                 sizeView.setSelection(0);
                 flavorView.setSelection(0);

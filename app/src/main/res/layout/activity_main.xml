@@ -9,28 +9,30 @@
         android:layout_height="wrap_content"
         android:background="#cccccc"
         android:gravity="center_vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
             android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/cart"
+            android:gravity="center"
             android:text="Cart:"
-            android:textSize="16sp"
-            android:layout_toLeftOf="@+id/cart"/>
+            android:textSize="16sp" />
+
         <TextView
             android:id="@+id/cart"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#00000000"
             android:gravity="center"
-            android:textSize="20sp"
-            android:background="#ffffff"
             android:text="0"
-            android:layout_alignParentRight="true"/>
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <ScrollView
@@ -111,7 +113,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/c0"
+                    android:id="@+id/h0"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -259,8 +261,8 @@
                                 android:id="@+id/p0"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="900"
                                 android:textAlignment="center"
@@ -418,8 +420,8 @@
                                 android:id="@+id/p1"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="950"
                                 android:textAlignment="center"
@@ -432,8 +434,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a1"
                             android:onClick="add"
+                            android:tag="a1"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -577,8 +579,8 @@
                                 android:id="@+id/p2"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="650"
                                 android:textAlignment="center"
@@ -591,8 +593,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a2"
                             android:onClick="add"
+                            android:tag="a2"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -736,8 +738,8 @@
                                 android:id="@+id/p3"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="650"
                                 android:textAlignment="center"
@@ -750,8 +752,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a3"
                             android:onClick="add"
+                            android:tag="a3"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -895,8 +897,8 @@
                                 android:id="@+id/p4"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="775"
                                 android:textAlignment="center"
@@ -909,8 +911,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a4"
                             android:onClick="add"
+                            android:tag="a4"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1054,8 +1056,8 @@
                                 android:id="@+id/p5"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="950"
                                 android:textAlignment="center"
@@ -1068,8 +1070,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a5"
                             android:onClick="add"
+                            android:tag="a5"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1213,8 +1215,8 @@
                                 android:id="@+id/p6"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="850"
                                 android:textAlignment="center"
@@ -1227,8 +1229,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a6"
                             android:onClick="add"
+                            android:tag="a6"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1372,8 +1374,8 @@
                                 android:id="@+id/p7"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="960"
                                 android:textAlignment="center"
@@ -1386,8 +1388,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a7"
                             android:onClick="add"
+                            android:tag="a7"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1531,8 +1533,8 @@
                                 android:id="@+id/p8"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="1060"
                                 android:textAlignment="center"
@@ -1545,8 +1547,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a8"
                             android:onClick="add"
+                            android:tag="a8"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1690,8 +1692,8 @@
                                 android:id="@+id/p9"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="1450"
                                 android:textAlignment="center"
@@ -1704,8 +1706,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="a9"
                             android:onClick="add"
+                            android:tag="a9"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1849,8 +1851,8 @@
                                 android:id="@+id/pa"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="1550"
                                 android:textAlignment="center"
@@ -1863,8 +1865,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="aa"
                             android:onClick="add"
+                            android:tag="aa"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2008,8 +2010,8 @@
                                 android:id="@+id/pb"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="975"
                                 android:textAlignment="center"
@@ -2022,8 +2024,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="ab"
                             android:onClick="add"
+                            android:tag="ab"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2167,8 +2169,8 @@
                                 android:id="@+id/pc"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="1220"
                                 android:textAlignment="center"
@@ -2181,8 +2183,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="ac"
                             android:onClick="add"
+                            android:tag="ac"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2326,8 +2328,8 @@
                                 android:id="@+id/pd"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="850"
                                 android:textAlignment="center"
@@ -2340,13 +2342,14 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="ad"
                             android:onClick="add"
+                            android:tag="ad"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2484,8 +2487,8 @@
                                 android:id="@+id/pe"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
                                 android:imeOptions="actionDone"
+                                android:inputType="number"
                                 android:singleLine="true"
                                 android:text="220"
                                 android:textAlignment="center"
@@ -2498,8 +2501,8 @@
                             android:layout_marginBottom="10dp"
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
-                            android:tag="ad"
                             android:onClick="add"
+                            android:tag="ad"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
