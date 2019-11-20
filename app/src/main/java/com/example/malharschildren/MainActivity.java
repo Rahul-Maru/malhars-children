@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     int[][][] quantities = new int[styles][sizes][maxFlavors];
     int[] temp = new int[styles];
     int[][] defaultPrices = new int[][]{{900}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
-            {960, 960, 960, 960}, {1060, 1060}, {1450}, {1550}, {975}, {1200}, {850}};
+            {960, 960, 960, 960}, {1060, 1060}, {1450}, {1550}, {975}, {1200}, {850}, {200}};
     int[][][] prices = new int[styles][sizes][maxFlavors];
     Toast toast;
 
@@ -63,28 +63,29 @@ public class MainActivity extends AppCompatActivity {
             }
             temp[i] = 0;
             String hex = Integer.toHexString(i);
-            Spinner sizeView = findViewByString("z" + hex);
-
             //Method to adjust text size of spinner
             /*ArrayAdapter<CharSequence> sizeAdapter = ArrayAdapter.createFromResource(
                    this, R.array.sizeDropdown, R.layout.spinner_layout);
             sizeAdapter.setDropDownViewResource(R.layout.spinner_layout);
             sizeView.setAdapter(sizeAdapter);
             */
-
+            Spinner sizeView = findViewByString("z" + hex);
             Spinner flavorView = findViewByString("f" + hex);
             sizeView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     String tag = parent.getTag().toString();
                     char tagNum = tag.charAt(1);
+
                     TextView quantityView = findViewByString("q" + tagNum);
                     Spinner flavorView = findViewByString("f" + tagNum);
+
                     int selectedPos = flavorView.getSelectedItemPosition();
 
                     tagNum = (char) Integer.parseInt(tagNum + "", 16);
                     int index = tagNum;
-                    quantityView.setText(String.valueOf(quantities[index][position][selectedPos] + temp[tagNum]));
+
+                    quantityView.setText(String.valueOf(quantities[index][position][selectedPos] + temp[index]));
 
                 }
 
@@ -119,11 +120,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*public void spinnerClick(View view) {Log.e("spinnywinnywoopypoo", "spinnerClick: TRIGGERED");Spinner sizeView = (Spinner) view;String selection = sizeView.getSelectedItem().toString();String tag = sizeView.getTag().toString();
-        int tagNum = tag.charAt(1) - '0';int quantityId = resources.getIdentifier("q" + tagNum, "id", thisPackage);
-        TextView quantityView = findViewById(quantityId);int size = selection.charAt(0);
-        if (size == '1') {size = 10 + selection.charAt(1);}size -= '8';
-        quantityView.setText(quantities[tagNum][size]);}*/
     public void click(View view) {
         //gets tag (ex. b5) of view that calls this method
         String tag = view.getTag().toString();
@@ -139,46 +135,44 @@ public class MainActivity extends AppCompatActivity {
         Spinner sizeView = findViewByString("z" + textNum);
         Spinner flavorView = findViewByString("f" + textNum);
 
-        String sizeSelection = sizeView.getSelectedItem().toString();
         int flavorSelection = flavorView.getSelectedItemPosition();
-
-
-        //char - int conversion (Ascii): '0' - 48, '1' - 49 ... '8' - 56, '9' - 57.
         size = sizeView.getSelectedItemPosition();
 
         textNum = (char) Integer.parseInt(textNum + "", 16);
-        int quantityUpdated  = quantities[textNum][size][flavorSelection];
+        int quantityUpdated = quantities[textNum][size][flavorSelection];
         quantity = temp[textNum];
 
         if (clickType == 'm') {
             if (quantityUpdated + quantity > 0) {
                 quantity--;
-
             }
         } else {
             quantity++;
         }
-        quantityView.setText("" + (quantityUpdated + quantity));
+        quantityView.setText(String.valueOf(quantityUpdated + quantity));
         temp[textNum] = quantity;
-        prices[textNum][size][flavorSelection] = Integer.parseInt(priceView.getText().toString());
     }
 
 
     public void add(View view) {
-        int tag = Integer.parseInt(view.getTag().toString().charAt(1) + "", 16);
-        TextView nameView = findViewByString("n" + tag);
+        char hex = view.getTag().toString().charAt(1);
+        int tag = Integer.parseInt(hex + "", 16);
+        TextView nameView = findViewByString("n" + hex);
         TextView cartView = findViewByString("cart");
-        Spinner sizeView = findViewByString("z" + tag);
-        Spinner flavorView = findViewByString("f" + tag);
+        TextView priceView = findViewByString("p" + hex);
+        Spinner sizeView = findViewByString("z" + hex);
+        Spinner flavorView = findViewByString("f" + hex);
+
 
         int size = sizeView.getSelectedItemPosition();
         int flavor = flavorView.getSelectedItemPosition();
 
-        int quantity = 0;
+        int quantity = temp[tag];
         quantities[tag][size][flavor] = temp[tag];
-        quantity = temp[tag];
         cart += quantity;
+
         cartView.setText(String.valueOf(cart));
+        prices[tag][size][flavor] = Integer.parseInt(priceView.getText().toString());
 
         if (quantity == 0) {
             toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_SHORT);
@@ -226,7 +220,6 @@ public class MainActivity extends AppCompatActivity {
                         String size = sizeView.getItemAtPosition(j).toString();
                         int quantity = quantities[i][j][k];
                         int price = prices[i][j][k];
-                        Log.e("", "submit: " + price);
                         int amount = quantity * price;
                         total += amount;
 
