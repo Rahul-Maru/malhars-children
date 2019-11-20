@@ -4,16 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
     Context appContext;
@@ -24,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     int sizes = 5;
     int maxFlavors = 4;
     int bill = 4;
+    int currentBill;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
     int[][][] temp = new int[styles][sizes][maxFlavors];
     int[][] defaultPrices = new int[][]{{900}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
@@ -31,11 +36,21 @@ public class MainActivity extends AppCompatActivity {
     int[][][] prices = new int[styles][sizes][maxFlavors];
     Toast toast;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+      //Save bill number even when app is closed
+/*
+        SharedPreferences prefs = getSharedPreferences("PreferencesName", MODE_PRIVATE);
+        int myInt = prefs.getInt("myInt", 0); // 0 is default
+
+        SharedPreferences.Editor editor = getSharedPreferences("PreferencesName", MODE_PRIVATE).edit();
+        editor.putInt("billNumber", 4);
+        editor.apply();
+*/
         appContext = getApplicationContext();
         resources = getResources();
         thisPackage = MainActivity.this.getPackageName();
@@ -49,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
             }
             String hex = Integer.toHexString(i);
             Spinner sizeView = findViewByString("z" + hex);
+
+            //Method to adjust text size of spinner
+            /*ArrayAdapter<CharSequence> sizeAdapter = ArrayAdapter.createFromResource(
+                   this, R.array.sizeDropdown, R.layout.spinner_layout);
+            sizeAdapter.setDropDownViewResource(R.layout.spinner_layout);
+            sizeView.setAdapter(sizeAdapter);
+            */
+
             Spinner flavorView = findViewByString("f" + hex);
             sizeView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -101,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityView = findViewById(quantityId);int size = selection.charAt(0);
         if (size == '1') {size = 10 + selection.charAt(1);}size -= '8';
         quantityView.setText(quantities[tagNum][size]);}*/
-
     public void click(View view) {
         //gets tag (ex. b5) of view that calls this method
         String tag = view.getTag().toString();
@@ -110,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         int size;
         char clickType = tag.charAt(0);
         int quantity;
+
 
         TextView quantityView = findViewByString("q" + textNum);
         EditText priceView = findViewByString("p" + textNum);
@@ -125,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
 
         textNum = (char) Integer.parseInt(textNum + "", 16);
         quantity = temp[textNum][size][flavorSelection];
-
         if (clickType == 'm') {
             if (quantity > 0) {
                 quantity--;
@@ -142,8 +164,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void add(View view) {
         int tag = Integer.parseInt(view.getTag().toString().charAt(1) + "", 16);
-
         TextView nameView = findViewByString("n" + tag);
+        int quantity = 1;
 
         for (int i = 0; i < sizes; i++) {
             for (int j = 0; j < maxFlavors; j++) {
@@ -151,8 +173,13 @@ public class MainActivity extends AppCompatActivity {
                 //message += quantities[tag][i][j];
             }
         }
-        toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_LONG);
+        if (quantity == 0) {
+            toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_LONG);
+        } else {
+            toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_LONG);
+        }
         toast.show();
+
         resetAdd(tag);
     }
 
@@ -175,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 "Name: " + username + "\n" +
                 "Phone: " + phone + "\n\n";
         int unit = 0;
+
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
                 for (int k = 0; k < maxFlavors; k++) {
@@ -204,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         message += "Grand Total: ₹" + total + "\n\n\n" +
-                "Warmly,\n";
+                "Warmly,\nRaina de Nazareth" + "\n Malhar's Children";
 
         Log.e("", "submit: " + message);
 
@@ -244,6 +272,7 @@ public class MainActivity extends AppCompatActivity {
                 quantityView.setText("0");
                 sizeView.setSelection(0);
                 flavorView.setSelection(0);
+                priceView.setText(String.valueOf(defaultPrices[i][0]));
             }
         }
     }

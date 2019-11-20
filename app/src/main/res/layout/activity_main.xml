@@ -230,7 +230,7 @@
                                 android:id="@+id/p0"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="900"
@@ -389,7 +389,7 @@
                                 android:id="@+id/p1"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="950"
@@ -548,7 +548,7 @@
                                 android:id="@+id/p2"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="650"
@@ -707,7 +707,7 @@
                                 android:id="@+id/p3"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="650"
@@ -866,7 +866,7 @@
                                 android:id="@+id/p4"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="775"
@@ -1025,7 +1025,7 @@
                                 android:id="@+id/p5"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="950"
@@ -1184,7 +1184,7 @@
                                 android:id="@+id/p6"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="850"
@@ -1343,7 +1343,7 @@
                                 android:id="@+id/p7"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="960"
@@ -1502,7 +1502,7 @@
                                 android:id="@+id/p8"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="1060"
@@ -1661,7 +1661,7 @@
                                 android:id="@+id/p9"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="1450"
@@ -1820,7 +1820,7 @@
                                 android:id="@+id/pa"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="1550"
@@ -1979,7 +1979,7 @@
                                 android:id="@+id/pb"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="975"
@@ -2138,6 +2138,7 @@
                                 android:id="@+id/pc"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="1200"
@@ -2296,6 +2297,7 @@
                                 android:id="@+id/pd"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
                                 android:text="850"
@@ -2327,6 +2329,7 @@
         android:layout_alignParentBottom="true">
 
         <LinearLayout
+            android:id="@+id/buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -2347,6 +2350,7 @@
                 android:background="#ffffff" />
 
             <Button
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
