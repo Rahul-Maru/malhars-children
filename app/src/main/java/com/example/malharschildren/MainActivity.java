@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         message += "Grand Total: ₹" + total + "\n\n\n" +
-                "Warmly,\nRaina de Nazareth";
+                "Warmly,\nRaina de Nazareth" + "\n Malhar's Children";
 
         Log.e("", "submit: " + message);
 
