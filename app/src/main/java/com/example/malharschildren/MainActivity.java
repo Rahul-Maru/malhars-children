@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     int bill = 4;
     int currentBill;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
-    int[][][] temp = new int[styles][sizes][maxFlavors];
+    int[] temp = new int[styles];
     int[][] defaultPrices = new int[][]{{900}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
             {960, 960, 960, 960}, {1060, 1060}, {1450}, {1550}, {975}, {1200}, {850}};
     int[][][] prices = new int[styles][sizes][maxFlavors];
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-      //Save bill number even when app is closed
+        //Save bill number even when app is closed
 /*
         SharedPreferences prefs = getSharedPreferences("PreferencesName", MODE_PRIVATE);
         int myInt = prefs.getInt("myInt", 0); // 0 is default
@@ -59,9 +59,10 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 0; j < sizes; j++) {
                 for (int k = 0; k < maxFlavors; k++) {
                     quantities[i][j][k] = 0;
-                    temp[i][j][k] = 0;
+
                 }
             }
+            temp[i] = 0;
             String hex = Integer.toHexString(i);
             Spinner sizeView = findViewByString("z" + hex);
 
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
                     tagNum = (char) Integer.parseInt(tagNum + "", 16);
                     int index = tagNum;
-                    quantityView.setText(String.valueOf(temp[index][position][selectedPos]));
+                    quantityView.setText(String.valueOf(quantities[index][position][selectedPos] + temp[tagNum]));
 
                 }
 
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     int index = tagNum;
 
                     priceView.setText(String.valueOf(defaultPrices[tagNum][position]));
-                    quantityView.setText(String.valueOf(temp[index][selectedPos][position]));
+                    quantityView.setText(String.valueOf(quantities[index][selectedPos][position] + temp[tagNum]));
                 }
 
                 @Override
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         size = sizeView.getSelectedItemPosition();
 
         textNum = (char) Integer.parseInt(textNum + "", 16);
-        quantity = temp[textNum][size][flavorSelection];
+        quantity = temp[textNum];
         if (clickType == 'm') {
             if (quantity > 0) {
                 quantity--;
@@ -156,8 +157,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             quantity++;
         }
-        quantityView.setText("" + (quantity));
-        temp[textNum][size][flavorSelection] = quantity;
+        quantityView.setText("" + (quantities[textNum][size][flavorSelection] + quantity));
+        temp[textNum] = quantity;
         prices[textNum][size][flavorSelection] = Integer.parseInt(priceView.getText().toString());
     }
 
@@ -165,14 +166,14 @@ public class MainActivity extends AppCompatActivity {
     public void add(View view) {
         int tag = Integer.parseInt(view.getTag().toString().charAt(1) + "", 16);
         TextView nameView = findViewByString("n" + tag);
-        int quantity = 1;
+        Spinner sizeView = findViewByString("z" + tag);
+        Spinner flavorView = findViewByString("f" + tag);
 
-        for (int i = 0; i < sizes; i++) {
-            for (int j = 0; j < maxFlavors; j++) {
-                quantities[tag][i][j] = temp[tag][i][j];
-                //message += quantities[tag][i][j];
-            }
-        }
+        int size = sizeView.getSelectedItemPosition();
+        int flavor = flavorView.getSelectedItemPosition();
+
+        int quantity = 1;
+        quantities[tag][size][flavor] = temp[tag];
         if (quantity == 0) {
             toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_LONG);
         } else {
@@ -186,10 +187,10 @@ public class MainActivity extends AppCompatActivity {
     public void submit(View view) {
         String name;
         int total = 0;
-
         EditText nameField = findViewByString("m0");
         EditText emailField = findViewByString("e0");
         EditText phoneField = findViewByString("c0");
+
 
         String username = nameField.getText().toString();
         String email = emailField.getText().toString();
@@ -224,9 +225,9 @@ public class MainActivity extends AppCompatActivity {
                         total += amount;
 
                         message += "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
-                                + "    Size: " + size + "\n"
-                                + "    Price: ₹" + price + "\n"
-                                + "    Amount: ₹" + amount + "\n\n";
+                                + "        Size: " + size + "\n"
+                                + "        Price: ₹" + price + "\n"
+                                + "        Amount: ₹" + amount + "\n\n";
                     }
                 }
             }
@@ -240,16 +241,12 @@ public class MainActivity extends AppCompatActivity {
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
-        // raina.malharschildren@gmail.com
         intent.putExtra(Intent.EXTRA_CC, new String[]{"raina.malharschildren@gmail.com"});
+        intent.putExtra(Intent.EXTRA_BCC, new String[]{"rahulmaru3507@gmail.com", "suma.maru@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Invoice from Malhar's Children");
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-        reset();
-        nameField.setText("");
-        emailField.setText("");
-        phoneField.setText("");
     }
 
     public void resetClick(View view) {
@@ -265,14 +262,21 @@ public class MainActivity extends AppCompatActivity {
                 Spinner flavorView = findViewByString("f" + hex);
                 Spinner sizeView = findViewByString("z" + hex);
                 EditText priceView = findViewByString("p" + hex);
+                EditText nameField = findViewByString("m0");
+                EditText emailField = findViewByString("e0");
+                EditText phoneField = findViewByString("c0");
+
 
                 quantities[i][j] = new int[maxFlavors];
-                temp[i][j] = new int[maxFlavors];
+                temp[i] = 0;
 
                 quantityView.setText("0");
                 sizeView.setSelection(0);
                 flavorView.setSelection(0);
                 priceView.setText(String.valueOf(defaultPrices[i][0]));
+                nameField.setText("");
+                emailField.setText("");
+                phoneField.setText("");
             }
         }
     }
@@ -286,6 +290,7 @@ public class MainActivity extends AppCompatActivity {
             EditText priceView = findViewByString("p" + hex);
 
             sizeView.setSelection(0);
+            temp[i] = 0;
         }
     }
 
