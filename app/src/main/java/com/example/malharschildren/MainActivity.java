@@ -148,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
 
         textNum = (char) Integer.parseInt(textNum + "", 16);
         quantity = temp[textNum][size][flavorSelection];
-
         if (clickType == 'm') {
             if (quantity > 0) {
                 quantity--;
@@ -233,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         message += "Grand Total: ₹" + total + "\n\n\n" +
-                "Warmly,\n";
+                "Warmly,\nRaina de Nazareth";
 
         Log.e("", "submit: " + message);
 
