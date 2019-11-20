@@ -10,8 +10,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,18 +42,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Save bill number even when app is closed
-
+      //Save bill number even when app is closed
+/*
         SharedPreferences prefs = getSharedPreferences("PreferencesName", MODE_PRIVATE);
         int myInt = prefs.getInt("myInt", 0); // 0 is default
 
         SharedPreferences.Editor editor = getSharedPreferences("PreferencesName", MODE_PRIVATE).edit();
         editor.putInt("billNumber", 4);
         editor.apply();
-
+*/
         appContext = getApplicationContext();
         resources = getResources();
-         thisPackage = MainActivity.this.getPackageName();
+        thisPackage = MainActivity.this.getPackageName();
 
         for (int i = 0; i < quantities.length; i++) {
             for (int j = 0; j < sizes; j++) {
@@ -122,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityView = findViewById(quantityId);int size = selection.charAt(0);
         if (size == '1') {size = 10 + selection.charAt(1);}size -= '8';
         quantityView.setText(quantities[tagNum][size]);}*/
+    int quantity;
 
     public void click(View view) {
         //gets tag (ex. b5) of view that calls this method
@@ -130,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
         char textNum = tag.charAt(1);
         int size;
         char clickType = tag.charAt(0);
-        int quantity;
 
         TextView quantityView = findViewByString("q" + textNum);
         EditText priceView = findViewByString("p" + textNum);
@@ -172,8 +174,13 @@ public class MainActivity extends AppCompatActivity {
                 //message += quantities[tag][i][j];
             }
         }
-        toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_LONG);
-        toast.show();
+        if (quantity == 0) {
+            toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_LONG);
+            toast.show();
+        } else {
+            toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_LONG);
+            toast.show();
+        }
         resetAdd(tag);
     }
 
