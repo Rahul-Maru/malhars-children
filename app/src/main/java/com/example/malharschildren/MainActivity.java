@@ -124,8 +124,6 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityView = findViewById(quantityId);int size = selection.charAt(0);
         if (size == '1') {size = 10 + selection.charAt(1);}size -= '8';
         quantityView.setText(quantities[tagNum][size]);}*/
-    int quantity;
-
     public void click(View view) {
         //gets tag (ex. b5) of view that calls this method
         String tag = view.getTag().toString();
@@ -133,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
         char textNum = tag.charAt(1);
         int size;
         char clickType = tag.charAt(0);
+        int quantity;
+
 
         TextView quantityView = findViewByString("q" + textNum);
         EditText priceView = findViewByString("p" + textNum);
@@ -165,8 +165,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void add(View view) {
         int tag = Integer.parseInt(view.getTag().toString().charAt(1) + "", 16);
-
         TextView nameView = findViewByString("n" + tag);
+        int quantity = 1;
 
         for (int i = 0; i < sizes; i++) {
             for (int j = 0; j < maxFlavors; j++) {
@@ -176,11 +176,11 @@ public class MainActivity extends AppCompatActivity {
         }
         if (quantity == 0) {
             toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_LONG);
-            toast.show();
         } else {
             toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_LONG);
-            toast.show();
         }
+        toast.show();
+
         resetAdd(tag);
     }
 
@@ -273,6 +273,7 @@ public class MainActivity extends AppCompatActivity {
                 quantityView.setText("0");
                 sizeView.setSelection(0);
                 flavorView.setSelection(0);
+                priceView.setText(String.valueOf(defaultPrices[i][0]));
             }
         }
     }
