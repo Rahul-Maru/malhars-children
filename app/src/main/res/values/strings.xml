@@ -74,15 +74,4 @@
         <item>Pomo</item>
     </string-array>
 
-    <string-array name="prices">
-        <item>900</item>
-        <item>950</item>
-        <item>650</item>
-        <item>650</item>
-        <item>775</item>
-        <item>950</item>
-        <item>850</item>
-
-    </string-array>
-
 </resources>
