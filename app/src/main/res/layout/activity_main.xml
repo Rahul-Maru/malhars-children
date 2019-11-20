@@ -4,10 +4,39 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#cccccc"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="Cart:"
+            android:textSize="16sp"
+            android:layout_toLeftOf="@+id/cart"/>
+        <TextView
+            android:id="@+id/cart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="#ffffff"
+            android:text="0"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="50dp">
 
         <LinearLayout
@@ -112,7 +141,7 @@
                 <LinearLayout
                     android:id="@+id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -271,7 +300,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -430,7 +459,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -589,7 +618,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -748,7 +777,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -907,7 +936,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1066,7 +1095,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1225,7 +1254,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1384,7 +1413,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1543,7 +1572,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1702,7 +1731,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -1861,7 +1890,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -2020,7 +2049,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -2141,7 +2170,7 @@
                                 android:inputType="number"
                                 android:imeOptions="actionDone"
                                 android:singleLine="true"
-                                android:text="1200"
+                                android:text="1220"
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -2179,7 +2208,7 @@
                 <LinearLayout
                     android:id="@id/grid_rows"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -2318,7 +2347,164 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customborder"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/ne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Hair Band"
+                    android:textColor="#555555"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@id/grid_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"
+                        android:layout_weight="4"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bands" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="Size:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:id="@+id/ze"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/bandDropdown"
+                                android:tag="zd"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Variant:"
+                                android:textSize="15sp" />
+
+                            <Spinner
+                                android:id="@+id/fe"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:drawable/btn_dropdown"
+                                android:entries="@array/noFlavourSpinner"
+                                android:tag="fd"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:onClick="click"
+                                android:tag="md"
+                                android:text="-" />
+
+                            <TextView
+                                android:id="@+id/qe"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="8dp"
+                                android:background="@drawable/customborder"
+                                android:hint="Qty"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <Button
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:onClick="click"
+                                android:tag="pd"
+                                android:text="+" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price (₹) :"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/pe"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:text="220"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:tag="ad"
+                            android:onClick="add"
+                            android:text="UPDATE"
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
             <!--Paste above this line-->
         </LinearLayout>
     </ScrollView>
