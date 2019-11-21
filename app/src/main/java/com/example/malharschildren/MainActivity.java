@@ -4,16 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     int[][] defaultPrices = new int[][]{{900}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
             {960, 960, 960, 960}, {1060, 1060}, {1450}, {1550}, {975}, {1200}, {850}, {200}};
     int[][][] prices = new int[styles][sizes][maxFlavors];
+    boolean[][][] inCart = new boolean[styles][sizes][maxFlavors];
+    boolean flag = false;
     Toast toast;
 
 
@@ -42,14 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Save bill number even when app is closed
-/*
-        SharedPreferences prefs = getSharedPreferences("PreferencesName", MODE_PRIVATE);
-        int myInt = prefs.getInt("myInt", 0); // 0 is default
-
-        SharedPreferences.Editor editor = getSharedPreferences("PreferencesName", MODE_PRIVATE).edit();
-        editor.putInt("billNumber", 4);
-        editor.apply();
-*/
+        /*SharedPreferences prefs = getSharedPreferences("PreferencesName", MODE_PRIVATE);int myInt = prefs.getInt("myInt", 0); // 0 is defaultSharedPreferences.Editor editor = getSharedPreferences("PreferencesName", MODE_PRIVATE).edit();editor.putInt("billNumber", 4);editor.apply();*/
         appContext = getApplicationContext();
         resources = getResources();
         thisPackage = MainActivity.this.getPackageName();
@@ -58,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 0; j < sizes; j++) {
                 for (int k = 0; k < maxFlavors; k++) {
                     quantities[i][j][k] = 0;
-
+                    inCart[i][j][k] = false;
                 }
             }
             temp[i] = 0;
@@ -79,14 +71,29 @@ public class MainActivity extends AppCompatActivity {
 
                     TextView quantityView = findViewByString("q" + tagNum);
                     Spinner flavorView = findViewByString("f" + tagNum);
+                    EditText priceView = findViewByString("p" + tagNum);
 
-                    int selectedPos = flavorView.getSelectedItemPosition();
+                    int flavor = flavorView.getSelectedItemPosition();
 
                     tagNum = (char) Integer.parseInt(tagNum + "", 16);
                     int index = tagNum;
 
-                    quantityView.setText(String.valueOf(quantities[index][position][selectedPos] + temp[index]));
+                    int priceMessage;
 
+                    if (inCart[index][position][flavor]) {
+                        temp[index] = quantities[index][position][flavor];
+                        priceMessage = prices[index][position][flavor];
+                        flag = true;
+
+                    } else {
+                        if (flag) {
+                            temp[index] = quantities[index][position][flavor];
+                        }
+                        priceMessage = defaultPrices[tagNum][flavor];
+                        flag = false;
+                    }
+                    priceView.setText(String.valueOf(priceMessage));
+                    quantityView.setText(String.valueOf(temp[index]));
                 }
 
                 @Override
@@ -103,13 +110,30 @@ public class MainActivity extends AppCompatActivity {
                     Spinner sizeView = findViewByString("z" + tagNum);
                     EditText priceView = findViewByString("p" + tagNum);
 
-                    int selectedPos = sizeView.getSelectedItemPosition();
+                    int size = sizeView.getSelectedItemPosition();
 
                     tagNum = (char) Integer.parseInt(tagNum + "", 16);
                     int index = tagNum;
 
-                    priceView.setText(String.valueOf(defaultPrices[tagNum][position]));
-                    quantityView.setText(String.valueOf(quantities[index][selectedPos][position] + temp[tagNum]));
+
+                    int priceMessage;
+                    int message;
+                    if (inCart[index][size][position]) {
+                        message = quantities[index][size][position];
+                        flag = true;
+                        temp[index] = quantities[index][size][position];
+                        priceMessage = prices[index][size][position];
+                    } else {
+                        if (flag) {
+                            message = 0;
+                        } else {
+                            message = temp[index];
+                        }
+                        priceMessage = defaultPrices[tagNum][position];
+                        flag = false;
+                    }
+                    priceView.setText(String.valueOf(priceMessage));
+                    quantityView.setText(String.valueOf(message));
                 }
 
                 @Override
@@ -131,25 +155,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView quantityView = findViewByString("q" + textNum);
-        EditText priceView = findViewByString("p" + textNum);
         Spinner sizeView = findViewByString("z" + textNum);
         Spinner flavorView = findViewByString("f" + textNum);
 
-        int flavorSelection = flavorView.getSelectedItemPosition();
-        size = sizeView.getSelectedItemPosition();
 
         textNum = (char) Integer.parseInt(textNum + "", 16);
-        int quantityUpdated = quantities[textNum][size][flavorSelection];
         quantity = temp[textNum];
 
         if (clickType == 'm') {
-            if (quantityUpdated + quantity > 0) {
+            if (quantity > 0) {
                 quantity--;
             }
         } else {
             quantity++;
         }
-        quantityView.setText(String.valueOf(quantityUpdated + quantity));
+        quantityView.setText(String.valueOf(quantity));
         temp[textNum] = quantity;
     }
 
@@ -157,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
     public void add(View view) {
         char hex = view.getTag().toString().charAt(1);
         int tag = Integer.parseInt(hex + "", 16);
-        TextView nameView = findViewByString("n" + hex);
         TextView cartView = findViewByString("cart");
         TextView priceView = findViewByString("p" + hex);
         Spinner sizeView = findViewByString("z" + hex);
@@ -169,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
 
         int quantity = temp[tag];
         quantities[tag][size][flavor] = temp[tag];
+
         cart += quantity;
 
         cartView.setText(String.valueOf(cart));
@@ -178,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
             toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_SHORT);
         } else {
             toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_SHORT);
+            inCart[tag][size][flavor] = true;
+            flag = true;
         }
         toast.show();
 
@@ -253,47 +275,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void reset() {
+        cart = 0;
         for (int i = 0; i < quantities.length; i++) {
-            for (int j = 0; j < sizes; j++) {
-                String hex = Integer.toHexString(i);
+            quantities[i] = new int[sizes][maxFlavors];
+            temp[i] = 0;
 
-                TextView cartView = findViewByString("cart");
-                TextView quantityView = findViewByString("q" + hex);
-                Spinner flavorView = findViewByString("f" + hex);
-                Spinner sizeView = findViewByString("z" + hex);
-                EditText priceView = findViewByString("p" + hex);
-                EditText nameField = findViewByString("m0");
-                EditText emailField = findViewByString("e0");
-                EditText phoneField = findViewByString("h0");
+            String hex = Integer.toHexString(i);
 
+            TextView cartView = findViewByString("cart");
+            TextView quantityView = findViewByString("q" + hex);
+            Spinner flavorView = findViewByString("f" + hex);
+            Spinner sizeView = findViewByString("z" + hex);
+            EditText priceView = findViewByString("p" + hex);
+            EditText nameField = findViewByString("m0");
+            EditText emailField = findViewByString("e0");
+            EditText phoneField = findViewByString("h0");
 
-                quantities[i][j] = new int[maxFlavors];
-                temp[i] = 0;
-                cart = 0;
-
-                cartView.setText(String.valueOf(cart));
-                quantityView.setText("0");
-                sizeView.setSelection(0);
-                flavorView.setSelection(0);
-                priceView.setText(String.valueOf(defaultPrices[i][0]));
-                nameField.setText("");
-                emailField.setText("");
-                phoneField.setText("");
-            }
+            cartView.setText(String.valueOf(cart));
+            quantityView.setText("0");
+            sizeView.setSelection(0);
+            flavorView.setSelection(0);
+            priceView.setText(String.valueOf(defaultPrices[i][0]));
+            nameField.setText("");
+            emailField.setText("");
+            phoneField.setText("");
         }
     }
 
     public void resetAdd(int id) {
-        for (int i = 0; i < sizes; i++) {
-            String hex = Integer.toHexString(id);
-
-            Spinner flavorView = findViewByString("f" + hex);
-            Spinner sizeView = findViewByString("z" + hex);
-            EditText priceView = findViewByString("p" + hex);
-
-            sizeView.setSelection(0);
-            temp[i] = 0;
-        }
+        String hex = Integer.toHexString(id);
+        Spinner sizeView = findViewByString("z" + hex);
+        sizeView.setSelection(0);
     }
 
     public <T extends View> T findViewByString(String name) {
