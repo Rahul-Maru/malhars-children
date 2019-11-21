@@ -2410,7 +2410,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/bandDropdown"
-                                android:tag="zd"
+                                android:tag="ze"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2448,7 +2448,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="md"
+                                android:tag="me"
                                 android:text="-" />
 
                             <TextView
@@ -2466,7 +2466,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="pd"
+                                android:tag="pe"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -2502,7 +2502,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
                             android:onClick="add"
-                            android:tag="ad"
+                            android:tag="ae"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2551,6 +2551,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/toast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
 

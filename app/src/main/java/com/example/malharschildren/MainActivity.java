@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +16,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.jar.Attributes;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
     int[][][] quantities = new int[styles][sizes][maxFlavors];
     int[] temp = new int[styles];
     int[][] defaultPrices = new int[][]{{900}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
-            {960, 960, 960, 960}, {1060, 1060}, {1450}, {1550}, {975}, {1200}, {850}, {200}};
+            {960, 960, 960, 960}, {1060, 1060}, {1450, 1450, 1450}, {1550, 1550}, {975, 975}, {1200, 1200}, {850}, {200}};
     int[][][] prices = new int[styles][sizes][maxFlavors];
     boolean[][][] inCart = new boolean[styles][sizes][maxFlavors];
     boolean flag = false;
     Toast toast;
+    View toastView;
 
 
     @Override
@@ -177,17 +182,24 @@ public class MainActivity extends AppCompatActivity {
     public void add(View view) {
         char hex = view.getTag().toString().charAt(1);
         int tag = Integer.parseInt(hex + "", 16);
+        TextView nameView = findViewByString("n" + hex);
         TextView cartView = findViewByString("cart");
         TextView priceView = findViewByString("p" + hex);
         Spinner sizeView = findViewByString("z" + hex);
         Spinner flavorView = findViewByString("f" + hex);
 
+        String name = nameView.getText().toString();
+        int sizePos = sizeView.getSelectedItemPosition();
+        int flavorPos = flavorView.getSelectedItemPosition();
 
-        int size = sizeView.getSelectedItemPosition();
-        int flavor = flavorView.getSelectedItemPosition();
+        String size = sizeView.getItemAtPosition(sizePos).toString();
+        String flavor = flavorView.getItemAtPosition(flavorPos).toString();
+
+        size =  (size.equalsIgnoreCase("free size") ? " " : " (" + size + ") ");
+        flavor = (flavor.equalsIgnoreCase("none") ? "": " " + flavor  + " ");
 
         int quantity = temp[tag];
-        quantities[tag][size][flavor] = temp[tag];
+        quantities[tag][sizePos][flavorPos] = temp[tag];
 
         cart = 0;
 
@@ -200,15 +212,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         cartView.setText(String.valueOf(cart));
-        prices[tag][size][flavor] = Integer.parseInt(priceView.getText().toString());
+        prices[tag][sizePos][flavorPos] = Integer.parseInt(priceView.getText().toString());
 
         if (quantity == 0) {
             toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_SHORT);
         } else {
-            toast = Toast.makeText(appContext, "Your cart has been updated.", Toast.LENGTH_SHORT);
-            inCart[tag][size][flavor] = true;
+
+            toast = Toast.makeText(appContext, "Updated " + flavor + name + size + "to " + quantity, Toast.LENGTH_SHORT);
+            inCart[tag][sizePos][flavorPos] = true;
             flag = true;
         }
+
+        toastView = toast.getView();
+        //TextView toastText = toastView.findViewById(R.id.toast);
+        //toastText.setTextColor(Color.parseColor("#000000"));
+
+        toastView.getBackground().setColorFilter(Color.parseColor("#FFD5CC5D"), PorterDuff.Mode.SRC_IN);
+
+
         toast.show();
     }
 
