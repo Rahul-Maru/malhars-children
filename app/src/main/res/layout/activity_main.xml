@@ -19,7 +19,7 @@
             android:layout_marginBottom="10dp"
             android:background="#00000000"
             android:gravity="center_vertical"
-            android:text="Total price:"
+            android:text="Amount ₹:"
             android:textSize="16sp"
             android:layout_alignParentLeft="true"/>
 
