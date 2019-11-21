@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     String thisPackage;
 
     int cart = 0;
+    int total = 0;
     int styles = 15;
     int sizes = 5;
     int maxFlavors = 4;
@@ -182,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
     public void add(View view) {
         char hex = view.getTag().toString().charAt(1);
         int tag = Integer.parseInt(hex + "", 16);
+        TextView totalView = findViewByString("price");
         TextView nameView = findViewByString("n" + hex);
         TextView cartView = findViewByString("cart");
         TextView priceView = findViewByString("p" + hex);
@@ -200,19 +202,23 @@ public class MainActivity extends AppCompatActivity {
 
         int quantity = temp[tag];
         quantities[tag][sizePos][flavorPos] = temp[tag];
+        prices[tag][sizePos][flavorPos] = Integer.parseInt(priceView.getText().toString());
+
 
         cart = 0;
+        total = 0;
 
         for (int i = 0; i < styles; i++) {
             for (int j = 0; j < sizes; j++) {
                 for (int k = 0; k < maxFlavors; k++) {
                     cart += quantities[i][j][k];
+                    total += prices[i][j][k] * quantities[i][j][k];
                 }
             }
         }
 
         cartView.setText(String.valueOf(cart));
-        prices[tag][sizePos][flavorPos] = Integer.parseInt(priceView.getText().toString());
+        totalView.setText(String.valueOf(total));
 
         if (quantity == 0) {
             toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_SHORT);
@@ -303,6 +309,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void reset() {
         cart = 0;
+        total = 0;
         for (int i = 0; i < quantities.length; i++) {
             quantities[i] = new int[sizes][maxFlavors];
             temp[i] = 0;
@@ -310,6 +317,7 @@ public class MainActivity extends AppCompatActivity {
             String hex = Integer.toHexString(i);
 
             TextView cartView = findViewByString("cart");
+            TextView totalView = findViewByString("price");
             TextView quantityView = findViewByString("q" + hex);
             Spinner flavorView = findViewByString("f" + hex);
             Spinner sizeView = findViewByString("z" + hex);
@@ -318,6 +326,7 @@ public class MainActivity extends AppCompatActivity {
             EditText emailField = findViewByString("e0");
             EditText phoneField = findViewByString("h0");
 
+            totalView.setText(String.valueOf(total));
             cartView.setText(String.valueOf(cart));
             quantityView.setText("0");
             sizeView.setSelection(0);
