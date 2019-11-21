@@ -189,7 +189,15 @@ public class MainActivity extends AppCompatActivity {
         int quantity = temp[tag];
         quantities[tag][size][flavor] = temp[tag];
 
-        cart += quantity;
+        cart = 0;
+
+        for (int i = 0; i < styles; i++) {
+            for (int j = 0; j < sizes; j++) {
+                for (int k = 0; k < maxFlavors; k++) {
+                    cart += quantities[i][j][k];
+                }
+            }
+        }
 
         cartView.setText(String.valueOf(cart));
         prices[tag][size][flavor] = Integer.parseInt(priceView.getText().toString());
@@ -202,8 +210,6 @@ public class MainActivity extends AppCompatActivity {
             flag = true;
         }
         toast.show();
-
-        resetAdd(tag);
     }
 
     public void submit(View view) {
@@ -302,11 +308,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void resetAdd(int id) {
-        String hex = Integer.toHexString(id);
-        Spinner sizeView = findViewByString("z" + hex);
-        sizeView.setSelection(0);
-    }
 
     public <T extends View> T findViewByString(String name) {
         int id = resources.getIdentifier(name, "id", thisPackage);
