@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         message += "Grand Total: ₹" + total + "\n\n\n" +
-                "Warmly,\nRaina de Nazareth" + "\n Malhar's Children";
+                "Warmly,\n";
 
         Log.e("", "submit: " + message);
 
