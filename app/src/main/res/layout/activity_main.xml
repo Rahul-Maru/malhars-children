@@ -138,7 +138,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/h0"
+                    android:id="@+id/phone"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"

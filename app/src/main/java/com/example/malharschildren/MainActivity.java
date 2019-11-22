@@ -1,7 +1,5 @@
 package com.example.malharschildren;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -17,7 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.jar.Attributes;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -197,8 +195,8 @@ public class MainActivity extends AppCompatActivity {
         String size = sizeView.getItemAtPosition(sizePos).toString();
         String flavor = flavorView.getItemAtPosition(flavorPos).toString();
 
-        size =  (size.equalsIgnoreCase("free size") ? " " : " (" + size + ") ");
-        flavor = (flavor.equalsIgnoreCase("none") ? "": " " + flavor  + " ");
+        size = (size.equalsIgnoreCase("free size") ? " " : " (" + size + ") ");
+        flavor = (flavor.equalsIgnoreCase("none") ? "" : " " + flavor + " ");
 
         int quantity = temp[tag];
         quantities[tag][sizePos][flavorPos] = temp[tag];
@@ -235,7 +233,6 @@ public class MainActivity extends AppCompatActivity {
 
         toastView.getBackground().setColorFilter(Color.parseColor("#FFD5CC5D"), PorterDuff.Mode.SRC_IN);
 
-
         toast.show();
     }
 
@@ -244,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
         int total = 0;
         EditText nameField = findViewByString("m0");
         EditText emailField = findViewByString("e0");
-        EditText phoneField = findViewByString("h0");
+        EditText phoneField = findViewByString("phone");
 
 
         String username = nameField.getText().toString();
@@ -324,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
             EditText priceView = findViewByString("p" + hex);
             EditText nameField = findViewByString("m0");
             EditText emailField = findViewByString("e0");
-            EditText phoneField = findViewByString("h0");
+            EditText phoneField = findViewByString("phone");
 
             totalView.setText(String.valueOf(total));
             cartView.setText(String.valueOf(cart));
