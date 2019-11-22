@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         //TextView toastText = toastView.findViewById(R.id.toast);
         //toastText.setTextColor(Color.parseColor("#000000"));
 
-        toastView.getBackground().setColorFilter(Color.parseColor("#FFD5CC5D"), PorterDuff.Mode.SRC_IN);
+        // toastView.getBackground().setColorFilter(Color.parseColor("#FFD5CC5D"), PorterDuff.Mode.SRC_IN);
 
         toast.show();
     }
@@ -242,18 +242,21 @@ public class MainActivity extends AppCompatActivity {
         EditText nameField = findViewByString("m0");
         EditText emailField = findViewByString("e0");
         EditText phoneField = findViewByString("phone");
+        Spinner paymentField = findViewByString("pay");
 
 
         String username = nameField.getText().toString();
         String email = emailField.getText().toString();
         String phone = phoneField.getText().toString();
+        String payment = paymentField.getSelectedItem().toString();
 
         // "\nNAME ✔ \tSIZE ✔ \tQUANTITY ✔ \tPRICE ✔ \tAMOUNT ✔"
         String message = "Dear " + username + "," +
                 "\n\nThank you so much for shopping at Malhar's Children!" +
                 "\n\nThis is your invoice:" + "\n\n" +
                 "Name: " + username + "\n" +
-                "Phone: " + phone + "\n\n";
+                "Phone: " + phone + "\n" +
+                "payment: " + payment + "\n\n";
         int unit = 0;
 
         for (int i = 0; i < quantities.length; i++) {
