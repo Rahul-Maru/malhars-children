@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Malhar\'s Children</string>
 
+    <string-array name="payDropdown">
+        <item>Cash</item>
+        <item>Card</item>
+        <item>Google Pay</item>
+        <item>PayTM</item>
+        <item>Not Paid</item>
+    </string-array>
+
     <string-array name="sizeDropdown">
         <item>8 - 9</item>
         <item>9 - 10</item>
