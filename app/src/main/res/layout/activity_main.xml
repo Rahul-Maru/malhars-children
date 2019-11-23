@@ -84,7 +84,7 @@
                     android:layout_marginHorizontal="8dp"
                     android:layout_weight="1"
                     android:text="Name"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/m0"
@@ -109,7 +109,7 @@
                     android:layout_marginHorizontal="8dp"
                     android:layout_weight="1"
                     android:text="Email"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/e0"
@@ -135,14 +135,14 @@
                     android:layout_marginHorizontal="8dp"
                     android:layout_weight="1"
                     android:text="Phone"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/phone"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:hint="Enter phone number"
+                    android:hint="Enter number"
                     android:imeOptions="actionDone"
                     android:inputType="phone"
                     android:singleLine="true"
@@ -161,7 +161,7 @@
                     android:layout_marginHorizontal="8dp"
                     android:layout_weight="1"
                     android:text="Payment"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <Spinner
                     android:id="@+id/pay"
@@ -315,7 +315,7 @@
                                 android:imeOptions="actionDone"
                                 android:inputType="number"
                                 android:singleLine="true"
-                                android:text="900"
+                                android:text="875"
                                 android:textAlignment="center"
                                 android:textSize="16sp" />
                         </LinearLayout>
