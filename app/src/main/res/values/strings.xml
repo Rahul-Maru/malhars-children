@@ -6,7 +6,7 @@
         <item>Card</item>
         <item>Google Pay</item>
         <item>PayTM</item>
-        <item>Not Paid</item>
+        <item>Pending</item>
     </string-array>
 
     <string-array name="sizeDropdown">

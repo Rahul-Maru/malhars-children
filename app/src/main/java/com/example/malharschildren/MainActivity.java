@@ -3,14 +3,13 @@ package com.example.malharschildren;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -181,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
     public void add(View view) {
         char hex = view.getTag().toString().charAt(1);
         int tag = Integer.parseInt(hex + "", 16);
-        TextView totalView = findViewByString("price");
+        TextView totalView = findViewByString("total");
         TextView nameView = findViewByString("n" + hex);
         TextView cartView = findViewByString("cart");
         TextView priceView = findViewByString("p" + hex);
@@ -222,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
             toast = Toast.makeText(appContext, "Nothing to update", Toast.LENGTH_SHORT);
         } else {
 
-            toast = Toast.makeText(appContext, "Updated " + flavor + name + size + "to " + quantity, Toast.LENGTH_SHORT);
+            toast = Toast.makeText(appContext, "Updated " + flavor + name + size + " qty to " + quantity, Toast.LENGTH_SHORT);
             inCart[tag][sizePos][flavorPos] = true;
             flag = true;
         }
@@ -238,11 +237,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void submit(View view) {
         String name;
-        int total = 0;
         EditText nameField = findViewByString("m0");
         EditText emailField = findViewByString("e0");
         EditText phoneField = findViewByString("phone");
         Spinner paymentField = findViewByString("pay");
+        TextView totalView = findViewByString("total");
 
 
         String username = nameField.getText().toString();
@@ -250,13 +249,13 @@ public class MainActivity extends AppCompatActivity {
         String phone = phoneField.getText().toString();
         String payment = paymentField.getSelectedItem().toString();
 
-        // "\nNAME ✔ \tSIZE ✔ \tQUANTITY ✔ \tPRICE ✔ \tAMOUNT ✔"
+        total = Integer.parseInt(totalView.getText().toString());
         String message = "Dear " + username + "," +
                 "\n\nThank you so much for shopping at Malhar's Children!" +
                 "\n\nThis is your invoice:" + "\n\n" +
                 "Name: " + username + "\n" +
                 "Phone: " + phone + "\n" +
-                "payment: " + payment + "\n\n";
+                "Payment: " + payment + "\n\n";
         int unit = 0;
 
         for (int i = 0; i < quantities.length; i++) {
@@ -276,7 +275,6 @@ public class MainActivity extends AppCompatActivity {
                         int quantity = quantities[i][j][k];
                         int price = prices[i][j][k];
                         int amount = quantity * price;
-                        total += amount;
 
                         message += "    " + unit + ". " + flavor + " " + name + " X " + quantity + "\n"
                                 + "        Size: " + size + "\n"
@@ -317,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
             String hex = Integer.toHexString(i);
 
             TextView cartView = findViewByString("cart");
-            TextView totalView = findViewByString("price");
+            TextView totalView = findViewByString("total");
             TextView quantityView = findViewByString("q" + hex);
             Spinner flavorView = findViewByString("f" + hex);
             Spinner sizeView = findViewByString("z" + hex);
@@ -325,6 +323,7 @@ public class MainActivity extends AppCompatActivity {
             EditText nameField = findViewByString("m0");
             EditText emailField = findViewByString("e0");
             EditText phoneField = findViewByString("phone");
+            Spinner paymentField = findViewByString("pay");
 
             totalView.setText(String.valueOf(total));
             cartView.setText(String.valueOf(cart));
@@ -335,6 +334,7 @@ public class MainActivity extends AppCompatActivity {
             nameField.setText("");
             emailField.setText("");
             phoneField.setText("");
+            paymentField.setSelection(0);
         }
     }
 
