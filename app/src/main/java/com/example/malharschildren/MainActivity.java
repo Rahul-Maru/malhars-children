@@ -293,8 +293,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
-        intent.putExtra(Intent.EXTRA_CC, new String[]{"raina.malharschildren@gmail.com"});
-        intent.putExtra(Intent.EXTRA_BCC, new String[]{"rahulmaru3507@gmail.com", "suma.maru@gmail.com"});
+        intent.putExtra(Intent.EXTRA_CC, new String[]{"malharschildren@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Invoice from Malhar's Children");
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
