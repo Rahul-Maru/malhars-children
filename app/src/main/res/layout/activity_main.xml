@@ -1772,7 +1772,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/na"
+                    android:id="@+id/n10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
@@ -1820,12 +1820,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/za"
+                                android:id="@+id/z10"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/sizeDropdown"
-                                android:tag="za"
+                                android:tag="z10"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1843,12 +1843,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/fa"
+                                android:id="@+id/f10"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/callaFlavourSpinner"
-                                android:tag="fa"
+                                android:tag="f10"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -1863,11 +1863,11 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="ma"
+                                android:tag="m10"
                                 android:text="-" />
 
                             <TextView
-                                android:id="@+id/qa"
+                                android:id="@+id/q10"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="8dp"
@@ -1881,7 +1881,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="pa"
+                                android:tag="p10"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -1899,7 +1899,7 @@
                                 android:textSize="15sp" />
 
                             <EditText
-                                android:id="@+id/pa"
+                                android:id="@+id/p10"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:imeOptions="actionDone"
@@ -1917,7 +1917,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
                             android:onClick="add"
-                            android:tag="aa"
+                            android:tag="a10"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -1931,7 +1931,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/nb"
+                    android:id="@+id/n11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
@@ -1979,12 +1979,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/zb"
+                                android:id="@+id/z11"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/palazzoSizeDropdown"
-                                android:tag="zb"
+                                android:tag="z11"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2002,12 +2002,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/fb"
+                                android:id="@+id/f11"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/palazzoFlavourSpinner"
-                                android:tag="fb"
+                                android:tag="f11"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2022,11 +2022,11 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="mb"
+                                android:tag="m11"
                                 android:text="-" />
 
                             <TextView
-                                android:id="@+id/qb"
+                                android:id="@+id/q11"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="8dp"
@@ -2040,7 +2040,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="pb"
+                                android:tag="p11"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -2058,7 +2058,7 @@
                                 android:textSize="15sp" />
 
                             <EditText
-                                android:id="@+id/pb"
+                                android:id="@+id/p11"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:imeOptions="actionDone"
@@ -2076,7 +2076,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
                             android:onClick="add"
-                            android:tag="ab"
+                            android:tag="a11"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2090,7 +2090,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/nc"
+                    android:id="@+id/n12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
@@ -2138,12 +2138,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/zc"
+                                android:id="@+id/z12"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/sizeDropdown"
-                                android:tag="zc"
+                                android:tag="z12"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2161,12 +2161,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/fc"
+                                android:id="@+id/f12"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/everybodyPantsFlavourSpinner"
-                                android:tag="fc"
+                                android:tag="f12"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2181,11 +2181,11 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="mc"
+                                android:tag="m12"
                                 android:text="-" />
 
                             <TextView
-                                android:id="@+id/qc"
+                                android:id="@+id/q12"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="8dp"
@@ -2199,7 +2199,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="pc"
+                                android:tag="p12"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -2217,7 +2217,7 @@
                                 android:textSize="15sp" />
 
                             <EditText
-                                android:id="@+id/pc"
+                                android:id="@+id/p12"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:imeOptions="actionDone"
@@ -2235,7 +2235,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
                             android:onClick="add"
-                            android:tag="ac"
+                            android:tag="a12"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2249,7 +2249,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/nd"
+                    android:id="@+id/n13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
@@ -2297,12 +2297,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/zd"
+                                android:id="@+id/z13"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/sizeDropdown"
-                                android:tag="zd"
+                                android:tag="z13"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2320,12 +2320,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/fd"
+                                android:id="@+id/f13"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/noFlavourSpinner"
-                                android:tag="fd"
+                                android:tag="f13"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2340,11 +2340,11 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="md"
+                                android:tag="m13"
                                 android:text="-" />
 
                             <TextView
-                                android:id="@+id/qd"
+                                android:id="@+id/q13"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="8dp"
@@ -2358,7 +2358,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="pd"
+                                android:tag="p13"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -2376,7 +2376,7 @@
                                 android:textSize="15sp" />
 
                             <EditText
-                                android:id="@+id/pd"
+                                android:id="@+id/p13"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:imeOptions="actionDone"
@@ -2394,7 +2394,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
                             android:onClick="add"
-                            android:tag="ad"
+                            android:tag="a13"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
@@ -2408,7 +2408,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/ne"
+                    android:id="@+id/n14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
@@ -2456,12 +2456,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/ze"
+                                android:id="@+id/z14"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/bandDropdown"
-                                android:tag="ze"
+                                android:tag="z14"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2479,12 +2479,12 @@
                                 android:textSize="15sp" />
 
                             <Spinner
-                                android:id="@+id/fe"
+                                android:id="@+id/f14"
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:background="@android:drawable/btn_dropdown"
                                 android:entries="@array/noFlavourSpinner"
-                                android:tag="fd"
+                                android:tag="f14"
                                 android:textAlignment="center" />
                         </LinearLayout>
 
@@ -2499,11 +2499,11 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="me"
+                                android:tag="m14"
                                 android:text="-" />
 
                             <TextView
-                                android:id="@+id/qe"
+                                android:id="@+id/q14"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="8dp"
@@ -2517,7 +2517,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="pe"
+                                android:tag="p14"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -2535,7 +2535,7 @@
                                 android:textSize="15sp" />
 
                             <EditText
-                                android:id="@+id/pe"
+                                android:id="@+id/p14"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:imeOptions="actionDone"
@@ -2553,7 +2553,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
                             android:onClick="add"
-                            android:tag="ae"
+                            android:tag="a14"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
