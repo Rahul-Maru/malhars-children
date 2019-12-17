@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     int maxFlavors = 4;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
     int[] temp = new int[styles];
-    int[][] defaultPrices = new int[][]{{875}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
+    int[][] defaultPrices = new int[][]{{875}, {950, 950, 950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
             {960, 960, 960, 960}, {1060, 1060}, {1450, 1450, 1450}, {1550, 1550}, {975, 975}, {1200, 1200}, {850}, {200}};
     int[][][] prices = new int[styles][sizes][maxFlavors];
     boolean[][][] inCart = new boolean[styles][sizes][maxFlavors];
@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         message += "Grand Total: ₹" + total + "\n\n\n" +
-                "Warmly,\n";
+                "Warmly,";
 
         Log.e("", "submit: " + message);
 
