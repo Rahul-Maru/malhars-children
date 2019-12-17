@@ -56,15 +56,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             temp[i] = 0;
-            String hex = Integer.toHexString(i);
             //Method to adjust text size of spinner
             /*ArrayAdapter<CharSequence> sizeAdapter = ArrayAdapter.createFromResource(
                    this, R.array.sizeDropdown, R.layout.spinner_layout);
             sizeAdapter.setDropDownViewResource(R.layout.spinner_layout);
             sizeView.setAdapter(sizeAdapter);
             */
-            Spinner sizeView = findViewByString("z" + hex);
-            Spinner flavorView = findViewByString("f" + hex);
+            Spinner sizeView = findViewByString("z" + i);
+            Spinner flavorView = findViewByString("f" + i);
             sizeView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -113,22 +112,31 @@ public class MainActivity extends AppCompatActivity {
 
                     int priceMessage;
                     int message;
+//                    if (inCart[index][position][flavor]) {
+//                        temp[index] = quantities[index][position][flavor];
+//                        priceMessage = prices[index][position][flavor];
+//                        flag = true;
+//
+//                    } else {
+//                        if (flag) {
+//                            temp[index] = quantities[index][position][flavor];
+//                        }
+//                        priceMessage = defaultPrices[index][flavor];
+//                        flag = false;
+//                    }
                     if (inCart[index][size][position]) {
-                        message = quantities[index][size][position];
                         flag = true;
                         temp[index] = quantities[index][size][position];
                         priceMessage = prices[index][size][position];
                     } else {
                         if (flag) {
-                            message = 0;
-                        } else {
-                            message = temp[index];
+                            temp[index] = 0;
                         }
                         priceMessage = defaultPrices[index][position];
                         flag = false;
                     }
                     priceView.setText(String.valueOf(priceMessage));
-                    quantityView.setText(String.valueOf(message));
+                    quantityView.setText(String.valueOf(temp[index]));
                 }
 
                 @Override
@@ -300,14 +308,13 @@ public class MainActivity extends AppCompatActivity {
             quantities[i] = new int[sizes][maxFlavors];
             temp[i] = 0;
 
-            String hex = Integer.toHexString(i);
 
             TextView cartView = findViewByString("cart");
             TextView totalView = findViewByString("total");
-            TextView quantityView = findViewByString("q" + hex);
-            Spinner flavorView = findViewByString("f" + hex);
-            Spinner sizeView = findViewByString("z" + hex);
-            EditText priceView = findViewByString("p" + hex);
+            TextView quantityView = findViewByString("q" + i);
+            Spinner flavorView = findViewByString("f" + i);
+            Spinner sizeView = findViewByString("z" + i);
+            EditText priceView = findViewByString("p" + i);
             EditText nameField = findViewByString("m0");
             EditText emailField = findViewByString("e0");
             EditText phoneField = findViewByString("phone");
