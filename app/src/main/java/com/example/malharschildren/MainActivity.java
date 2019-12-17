@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,16 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     String tag = parent.getTag().toString();
-                    char tagNum = tag.charAt(1);
+                    int index = Integer.parseInt(tag.substring(1));
 
-                    TextView quantityView = findViewByString("q" + tagNum);
-                    Spinner flavorView = findViewByString("f" + tagNum);
-                    EditText priceView = findViewByString("p" + tagNum);
+                    TextView quantityView = findViewByString("q" + index);
+                    Spinner flavorView = findViewByString("f" + index);
+                    EditText priceView = findViewByString("p" + index);
 
                     int flavor = flavorView.getSelectedItemPosition();
-
-                    tagNum = (char) Integer.parseInt(tagNum + "", 16);
-                    int index = tagNum;
 
                     int priceMessage;
 
@@ -92,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                         if (flag) {
                             temp[index] = quantities[index][position][flavor];
                         }
-                        priceMessage = defaultPrices[tagNum][flavor];
+                        priceMessage = defaultPrices[index][flavor];
                         flag = false;
                     }
                     priceView.setText(String.valueOf(priceMessage));
@@ -108,16 +104,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     String tag = parent.getTag().toString();
-                    char tagNum = tag.charAt(1);
-                    TextView quantityView = findViewByString("q" + tagNum);
-                    Spinner sizeView = findViewByString("z" + tagNum);
-                    EditText priceView = findViewByString("p" + tagNum);
+                    int index = Integer.parseInt(tag.substring(1));
+                    TextView quantityView = findViewByString("q" + index);
+                    Spinner sizeView = findViewByString("z" + index);
+                    EditText priceView = findViewByString("p" + index);
 
                     int size = sizeView.getSelectedItemPosition();
-
-                    tagNum = (char) Integer.parseInt(tagNum + "", 16);
-                    int index = tagNum;
-
 
                     int priceMessage;
                     int message;
@@ -132,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             message = temp[index];
                         }
-                        priceMessage = defaultPrices[tagNum][position];
+                        priceMessage = defaultPrices[index][position];
                         flag = false;
                     }
                     priceView.setText(String.valueOf(priceMessage));
@@ -148,10 +140,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void click(View view) {
-        //gets tag (ex. b5) of view that calls this method
+        //gets tag (ex. b15) of view that calls this method
         String tag = view.getTag().toString();
-        //gets second char in tag (ex. 5), textNum and the first in tag (ex. b), clickType
-        char textNum = tag.charAt(1);
+        //gets the second and after chars in tag (ex. 15), textNum and the first in tag (ex. b), clickType
+        int textNum = Integer.parseInt(tag.substring(1));
         int size;
         char clickType = tag.charAt(0);
         int quantity;
@@ -162,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
         Spinner flavorView = findViewByString("f" + textNum);
 
 
-        textNum = (char) Integer.parseInt(textNum + "", 16);
         quantity = temp[textNum];
 
         if (clickType == 'm') {
@@ -178,14 +169,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void add(View view) {
-        char hex = view.getTag().toString().charAt(1);
-        int tag = Integer.parseInt(hex + "", 16);
+        int tag = Integer.parseInt(view.getTag().toString().substring(1));
         TextView totalView = findViewByString("total");
-        TextView nameView = findViewByString("n" + hex);
+        TextView nameView = findViewByString("n" + tag);
         TextView cartView = findViewByString("cart");
-        TextView priceView = findViewByString("p" + hex);
-        Spinner sizeView = findViewByString("z" + hex);
-        Spinner flavorView = findViewByString("f" + hex);
+        TextView priceView = findViewByString("p" + tag);
+        Spinner sizeView = findViewByString("z" + tag);
+        Spinner flavorView = findViewByString("f" + tag);
 
         String name = nameView.getText().toString();
         int sizePos = sizeView.getSelectedItemPosition();
@@ -263,10 +253,9 @@ public class MainActivity extends AppCompatActivity {
                 for (int k = 0; k < maxFlavors; k++) {
                     if (quantities[i][j][k] != 0) {
                         itemNumber += 1;
-                        String hex = Integer.toHexString(i);
-                        Spinner sizeView = findViewByString("z" + hex);
-                        TextView nameView = findViewByString("n" + hex);
-                        Spinner flavorView = findViewByString("f" + hex);
+                        Spinner sizeView = findViewByString("z" + i);
+                        TextView nameView = findViewByString("n" + i);
+                        Spinner flavorView = findViewByString("f" + i);
 
                         name = nameView.getText().toString();
                         String flavor = flavorView.getItemAtPosition(k).toString();

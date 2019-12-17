@@ -2499,11 +2499,11 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="me"
+                                android:tag="m14"
                                 android:text="-" />
 
                             <TextView
-                                android:id="@+id/qe"
+                                android:id="@+id/q14"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="8dp"
@@ -2517,7 +2517,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:onClick="click"
-                                android:tag="pe"
+                                android:tag="p14"
                                 android:text="+" />
                         </LinearLayout>
 
@@ -2535,7 +2535,7 @@
                                 android:textSize="15sp" />
 
                             <EditText
-                                android:id="@+id/pe"
+                                android:id="@+id/p14"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:imeOptions="actionDone"
@@ -2553,7 +2553,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAccent"
                             android:onClick="add"
-                            android:tag="ae"
+                            android:tag="a14"
                             android:text="UPDATE"
                             android:textColor="#ffffff" />
                     </LinearLayout>
