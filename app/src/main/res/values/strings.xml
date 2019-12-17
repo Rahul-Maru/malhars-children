@@ -36,8 +36,15 @@
         <item>None</item>
     </string-array>
 
+    <string-array name="kaftanFlavourSpinner">
+        <item>Indigo</item>
+        <item>Kora</item>
+        <item>Pomo</item>
+    </string-array>
+
+
     <string-array name="vestFlavourSpinner">
-        <item>Flamingo</item>
+        <item>Unicorn</item>
         <item>White</item>
         <item>Heart</item>
     </string-array>

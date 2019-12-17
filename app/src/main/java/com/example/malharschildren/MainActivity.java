@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     int maxFlavors = 4;
     int[][][] quantities = new int[styles][sizes][maxFlavors];
     int[] temp = new int[styles];
-    int[][] defaultPrices = new int[][]{{875}, {950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
+    int[][] defaultPrices = new int[][]{{875}, {950, 950, 950}, {650, 650, 650}, {650}, {775, 680}, {950}, {850, 850, 800},
             {960, 960, 960, 960}, {1060, 1060}, {1450, 1450, 1450}, {1550, 1550}, {975, 975}, {1200, 1200}, {850}, {200}};
     int[][][] prices = new int[styles][sizes][maxFlavors];
     boolean[][][] inCart = new boolean[styles][sizes][maxFlavors];
@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         message += "Grand Total: ₹" + total + "\n\n\n" +
-                "Warmly,\n";
+                "Warmly,";
 
         Log.e("", "submit: " + message);
 
@@ -293,8 +293,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_TEXT, message);
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
-        intent.putExtra(Intent.EXTRA_CC, new String[]{"raina.malharschildren@gmail.com"});
-        intent.putExtra(Intent.EXTRA_BCC, new String[]{"rahulmaru3507@gmail.com", "suma.maru@gmail.com"});
+        intent.putExtra(Intent.EXTRA_CC, new String[]{"malharschildren@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Invoice from Malhar's Children");
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
